@@ -26,7 +26,7 @@
 <meta property="og:description" content="Intro of Physical layerConceptDef：物理层是指通过传输介质，以及相关的通信协议、标准建立起来的物理线路定义了网络机械的，电子的和时间的接口，提供方法从sender到receiver传输bit机械特性：定义了传输介质接线器、物理接口的形状和尺寸、引线数目和排列顺序以及连接器与接口之间的固定和锁定装置电气特性：规定了在物理连接上传输二进制比特流时线路上信号电压的高低，阻">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-11T02:08:00.745Z">
-<meta property="article:modified_time" content="2023-09-11T02:07:33.029Z">
+<meta property="article:modified_time" content="2023-09-11T04:48:47.962Z">
 <meta property="article:author" content="Yang Xiaohe">
 <meta property="article:tag" content="Computer Networks">
 <meta name="twitter:card" content="summary">
@@ -115,79 +115,360 @@
         
 
         <div class="main-content-header">
-            <header class="navbar-container">
-    
-    <div class="navbar-content">
-        <div class="left">
-            
-            <a class="logo-title" href="/">
-                
-                GGbond&#39; blog
-                
-            </a>
-        </div>
+            $logo-title-font-size = 2rem
+$desktop-search-icon-font-size = 1.5rem
+$navbar-bar-line-height = 2.5px
+$logo-image-box-width = 46px
 
-        <div class="right">
-            <!-- PC -->
-            <div class="desktop">
-                <ul class="navbar-list">
-                    
-                        
-                            <li class="navbar-item">
-                                <!-- Menu -->
-                                <a class="" 
-                                    href="/"  >
-                                    
-                                        
-                                            <i class="fa-regular fa-house"></i>
-                                        
-                                        HOME
-                                    
-                                </a>
-                                <!-- Submenu -->
-                                
-                            </li>
-                    
-                    
-                </ul>
-            </div>
-            <!-- Mobile -->
-            <div class="mobile">
-                
-                <div class="icon-item navbar-bar">
-                    <div class="navbar-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+@import '../../common/variables'
 
-    <!-- Mobile drawer -->
-    <div class="navbar-drawer">
-        <ul class="drawer-navbar-list">
-            
-                
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
-                        href="/"  >
-                             
-                                
-                                    <i class="fa-regular fa-house"></i>
-                                
-                                HOME
-                            
-                        </a>
-                    </li>
-                    <!-- Submenu -->
-                    
-            
+.navbar-container
+  font-family 'Chillax-Variable', sans-serif
+  width 100%
+  height 100%
+  box-sizing border-box
+  display flex
+  align-items center
+  justify-content center
+  background $nav-color-bg
+  -webkit-backdrop-filter blur(10px)
+  backdrop-filter blur(10px)
+  padding-top $scroll-progress-bar-height
+  hover-style(
+    false,
+    0,
+    0
+  )
 
-        </ul>
-    </div>
+  .navbar-content
+    position relative
+    height 100%
+    width $main-content-width
+    max-width $content-max-width
+    display flex
+    flex-direction row
+    justify-content space-between
+    align-items center
+    z-index $z-index-5
 
-    <div class="window-mask"></div>
+    &.has-home-banner
+      max-width: $content-max-width * 1.2
 
-</header>
+    +redefine-tablet()
+      width $main-content-width-tablet
 
+    +redefine-mobile()
+      width $main-content-width-mobile
+
+    .left
+      display flex
+      align-items center
+      transition-t('transform', '0', '0.2', 'linear')
+
+      .navbar-shrink &
+        transform scale(0.72)
+        transform-origin left
+
+      if (hexo-config('defaults.logo') && hexo-config('defaults.logo') != '')
+        .logo-image
+          width $logo-image-box-width
+          height $logo-image-box-width
+          margin-right 8px
+
+          +redefine-tablet()
+            width: $logo-image-box-width * 0.9
+            height: $logo-image-box-width * 0.9
+
+          +redefine-mobile()
+            width: $logo-image-box-width * 0.8
+            height: $logo-image-box-width * 0.8
+
+          img
+            border-radius 6px
+            width 100%
+
+      .logo-title
+        font-size $logo-title-font-size
+        font-weight 520
+        // letter-spacing 1px
+        line-height 1
+        color var(--first-text-color)
+
+        h1
+          margin 0
+          font-size $logo-title-font-size
+          font-weight 520
+          //letter-spacing 1px
+          line-height 1
+          color var(--first-text-color)
+
+          +redefine-tablet()
+            font-size: $logo-title-font-size * 0.9
+
+          +redefine-mobile()
+            font-size: $logo-title-font-size * 0.8
+
+        +redefine-tablet()
+          font-size: $logo-title-font-size * 0.9
+
+        +redefine-mobile()
+          font-size: $logo-title-font-size * 0.8
+
+    .right
+      .desktop
+        .navbar-list
+          display flex
+          gap 24px
+          align-items center
+
+          +redefine-tablet()
+            display none
+
+          .navbar-item
+            float left
+            // padding 5px
+            position relative
+            font-size 1rem
+            font-weight 450
+            cursor pointer
+            color var(--default-text-color)
+
+            a
+              display block
+              padding 5px
+
+            a .fa-chevron-down
+              transform rotate(0deg)
+              transition transform 0.3s ease
+
+            &:hover a .fa-chevron-down
+              transform rotate(180deg)
+
+            &:hover .has-dropdown
+              &::after
+                display none !important
+
+            &:hover a, .active
+              &::after
+                content ''
+                position absolute
+                bottom -5px
+                left 50%
+                width 100%
+                height 2px
+                transform translateX(-50%)
+                border-radius $redefine-border-radius-large
+                background var(--primary-color)
+                transition-t('transform, bottom', '0, 0', '0.2, 0.2', 'linear, linear')
+
+                .navbar-shrink &
+                  bottom -($navbar-shrink-height / 2 - 17)
+
+            &.search
+              font-size $desktop-search-icon-font-size
+              margin-left 26px
+
+              i
+                color var(--default-text-color)
+
+            .sub-menu
+              position absolute
+              right auto
+              left 50%
+              -webkit-transform translate(-50%, 0)
+              -o-transform translate(-50%, 0)
+              transform translate(-50%, 0)
+              margin-top 0px
+              width auto
+              text-align center
+              list-style none
+              padding 0 10px
+              border-radius $redefine-border-radius-large
+              // visibility hidden
+              max-height 0px
+              overflow hidden
+              transition-t('all', '0', '0.2', 'linear')
+
+              li a
+                white-space nowrap
+                color var(--default-text-color)
+                font-size 1rem
+                padding 3px 15px
+                display block
+                text-align center
+                border-radius 8px
+                transition-t('all', '0', '0.2', 'linear')
+
+                &:hover
+                  color var(--primary-color)
+                  background-color var(--third-background-color)
+
+        .navbar-list .navbar-item:hover .sub-menu
+          // visibility visible
+          max-height 500px
+          transition-t('all', '0', '0.2', 'ease')
+          redefine-container(
+            false,
+            0,
+            0,
+            10px,
+            5px
+          )
+
+      .mobile
+        display flex
+        justify-content space-between
+        align-items center
+
+        .icon-item
+          display none
+          position relative
+          cursor pointer
+          font-size 18px
+          margin-left 12px
+          width 20px
+          height 20px
+          color var(--default-text-color)
+
+          i
+            color var(--default-text-color)
+
+          &:first-child
+            margin-left 0
+
+          +redefine-tablet()
+            display flex
+            justify-content center
+            align-items center
+
+        .navbar-bar
+          .navbar-bar-middle
+            width 18px
+            height $navbar-bar-line-height
+            position relative
+            background var(--default-text-color)
+
+            .navbar-drawer-show &
+              background transparent
+
+            &::before, &::after
+              content ''
+              position absolute
+              left 0
+              width 100%
+              height $navbar-bar-line-height
+              background var(--default-text-color)
+              transition-t('transform', '0', '0.38', 'ease')
+
+            &::before
+              top -6px
+
+              .navbar-drawer-show &
+                transform translateY(6px) rotate(45deg)
+
+            &::after
+              bottom -6px
+
+              .navbar-drawer-show &
+                transform translateY(-6px) rotate(-45deg)
+
+  .navbar-drawer
+    width 100%
+    padding $navbar-height 0 20px 0
+    position absolute
+    top 0
+    left 0
+    transform scaleY(0)
+    transform-origin top
+    z-index $z-index-2
+    background var(--background-color)
+    transition-t('transform', '0', '0.38', 'ease')
+
+    .navbar-drawer-show &
+      transform scaleY(1)
+
+    .drawer-navbar-list
+      display flex
+      flex-direction column
+      justify-content flex-start
+      align-items center
+
+      .drawer-navbar-item
+        font-size 1rem
+        margin 6px 0
+        height 32px
+
+        a
+          padding 6px 20px
+          border-radius 20px
+          color var(--default-text-color)
+
+          &:hover
+            color var(--second-text-color)
+            border 1px solid var(--default-text-color)
+
+          &.active
+            border 1px solid var(--default-text-color)
+            color var(--second-text-color)
+
+        .has-dropdown
+
+        a .fa-chevron-down
+          transform rotate(0deg)
+          transition transform 0.3s ease
+
+        &:hover a .fa-chevron-down
+          transform rotate(180deg)
+
+        &:hover .has-dropdown
+          &::after
+            display none !important
+
+      .dropdown-item
+        font-size 1rem
+        margin 6px 0
+        height 16px
+
+        a
+          padding 6px 20px
+          border-radius 20px
+          color var(--default-text-color)
+
+          &:hover
+            color var(--second-text-color)
+            border 1px solid var(--default-text-color)
+
+          &.active
+            border 1px solid var(--default-text-color)
+            color var(--second-text-color)
+
+      .sub-menu
+        position relative
+        margin-top 8px
+        width 100%
+        text-align center
+        list-style none
+        padding 0 10px
+        border-radius $redefine-border-radius-large
+        // float left
+
+  .window-mask
+    position absolute
+    top 0
+    width 100%
+    height 100vh
+    background rgba(0, 0, 0, 0.4)
+    z-index $z-index-1
+    visibility hidden
+    opacity 0
+    transition-t('transform, opacity', '0, 0', '0.38, 0.38', 'ease, ease')
+
+    .navbar-drawer-show &
+      visibility visible
+      opacity 1
+
+.navbar-drawer-show
+  overflow hidden
 
         </div>
 
@@ -232,8 +513,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-11 10:07:33</span>
-            <span class="mobile">2023-09-11 10:07:33</span>
+            <span class="desktop">2023-09-11 12:48:47</span>
+            <span class="mobile">2023-09-11 12:48:47</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -297,7 +578,13 @@
 </ul>
 根据振幅 频率 相位的不同表示更多的数据<br>
 
-<h3 id="Terms（条约）"><a href="#Terms（条约）" class="headerlink" title="Terms（条约）"></a>Terms（条约）</h3><p>Data element：就是bit 一个signal binary 0 or 1<br><br>Data rate: 每秒传输的bit<br>Sinal rate 和Data rate的区别：</p>
+<h3 id="Terms（条约）"><a href="#Terms（条约）" class="headerlink" title="Terms（条约）"></a>Terms（条约）</h3><p>两个概念Data element和signal element<br><br>Data element：就是bit 一个signal binary 0 or 1，<br><br>Data rate: 每秒传输的bit,the rate at which data elements are transmitted.（比特率）<br><br>Signal rate（也称为modulation rate）：每秒信号元数(波特率)，信号元的传输速率<br>Sinal rate 和Data rate的区别：<br>比特率定义：对信息传输速率（传信率）的度量，单位时间内传输的数据位数。<br></p>
+<p>波特率定义：单位时间内传输符号的个数（传符号率），单位时间内信号的变化次数或符号更改的速度，如果一个通信信号每秒变化1000次，则波特率为1000波特&#x2F;秒或1000Bd<br><br></p>
+<p>举例：如果在数字传输过程中，用0V表示数字0，5V表示数字1，那么每个码元有两种状态0和1. 每个码元代表一个二进制数字。此时的每秒码元数和每秒二进制代码数是一样的，这叫两相调制，波特率等于比特率。<br><br><br></p>
+<p>如果在数字传输过程中，0V、2V、4V和6V分别表示00、01、10和11，那么每个码元有四种状态00、01、10和11. 每个码元代表两个二进制数字。此时的每秒码元数是每秒二进制代码数的一半，这叫四相调制，波特率等于比特率一半，比特率是波特率的2倍，保证在数据传输过程中携带的信息更多。</p>
+<p>比特率：是信息量传送速率单位，即每秒传输二进制代码位数。bit&#x2F;s</p>
+<p>波特率：是码元传输速率单位，他说明单位时间传输了多少个码元。</p>
+<p>一般情况，比特率是高于波特率的，让信息传递尽可能的多</p>
 <h3 id="Basic-Encoding-Techniques"><a href="#Basic-Encoding-Techniques" class="headerlink" title="Basic Encoding Techniques"></a>Basic Encoding Techniques</h3><p>从数字信号到模拟信号：<br><br>Amplitude-shift keying (ASK):Amplitude difference of carrier frequency<br><br>Frequency-shift keying (FSK):Frequency difference near carrier frequency<br><br>Phase-shift keying (PSK):Phase of carrier signal shifted<br></p>
 <h3 id="modems的传送方式"><a href="#modems的传送方式" class="headerlink" title="modems的传送方式"></a>modems的传送方式</h3><p>三类duplex communication（双工通讯）：<br>Def：双工，duplex communication ， 指二台通讯设备之间，允许有双向的资料传输。移动设备之间的通信链路会占用两个频率：从终端到网络（上行链路）的传输信道，以及一个反方向（下行链路）的信道。双工的含义是可以同时进行双向传输，就如平时的在电话中通话那样。像步行对话机这样的设备是半双工或简单双工的。</p>
 <ul>
@@ -343,7 +630,7 @@
         <li><strong>Created at:</strong> 2023-09-11 10:08:00</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-09-11 10:07:33
+                <strong>Updated at:</strong> 2023-09-11 12:48:47
             </li>
         
         <li>
