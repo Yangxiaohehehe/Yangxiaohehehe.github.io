@@ -13,23 +13,25 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/08/31/cn2/"/>
+    <link rel="canonical" href="http://example.com/2023/09/25/cn5/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="第一章也是普通的介绍罢了，更多是概念，没啥实质性地内容。 How to designDesign Issues Addressing Error Control Flow control routing Multiplexing and de-mutiplexing    Layered ModelOSIStructure： 7 tiersPhysis-&gt;Data Link-&gt;Newt">
+        <meta name="description" content="Content Learn 6 elementary DLL protocol Learn &amp; master sliding-window Learn &amp; master ARQ（自动重复请求）&#x2F;PAR Learn &amp; master piggybacking(捎带确认) Other: pipeline, NAK   Elementary DLL protocolAssumption:（前提）  物理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Architecture">
-<meta property="og:url" content="http://example.com/2023/08/31/CN2/index.html">
+<meta property="og:title" content="data link layer(二)">
+<meta property="og:url" content="http://example.com/2023/09/25/CN5/index.html">
 <meta property="og:site_name" content="杨小鹤">
-<meta property="og:description" content="第一章也是普通的介绍罢了，更多是概念，没啥实质性地内容。 How to designDesign Issues Addressing Error Control Flow control routing Multiplexing and de-mutiplexing    Layered ModelOSIStructure： 7 tiersPhysis-&gt;Data Link-&gt;Newt">
+<meta property="og:description" content="Content Learn 6 elementary DLL protocol Learn &amp; master sliding-window Learn &amp; master ARQ（自动重复请求）&#x2F;PAR Learn &amp; master piggybacking(捎带确认) Other: pipeline, NAK   Elementary DLL protocolAssumption:（前提）  物理">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-31T09:32:39.595Z">
-<meta property="article:modified_time" content="2023-09-08T00:35:28.176Z">
+<meta property="og:image" content="http://example.com/2023/09/25/CN5/index.html">
+<meta property="article:published_time" content="2023-09-25T01:02:54.519Z">
+<meta property="article:modified_time" content="2023-09-25T09:44:59.837Z">
 <meta property="article:author" content="Yang Xiaohe">
 <meta property="article:tag" content="Computer Networks">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/09/25/CN5/index.html">
     
     
     <!--- Icon Part-->
@@ -41,7 +43,7 @@
     
     <title>
         
-            Architecture -
+            data link layer(二) -
         
         GGbond&#39; blog
     </title>
@@ -203,7 +205,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Architecture</h1>
+                <h1 class="article-title-regular">data link layer(二)</h1>
             
             </div>
             
@@ -225,15 +227,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-08-31 17:32:39</span>
-        <span class="mobile">2023-08-31 17:32:39</span>
+        <span class="desktop">2023-09-25 09:02:54</span>
+        <span class="mobile">2023-09-25 09:02:54</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-08 08:35:28</span>
-            <span class="mobile">2023-09-08 08:35:28</span>
+            <span class="desktop">2023-09-25 17:44:59</span>
+            <span class="mobile">2023-09-25 17:44:59</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -268,29 +270,141 @@
         
 
         <div class="article-content markdown-body">
-            <p>第一章也是普通的介绍罢了，更多是概念，没啥实质性地内容。</p>
-<h1 id="How-to-design"><a href="#How-to-design" class="headerlink" title="How to design"></a>How to design</h1><h2 id="Design-Issues"><a href="#Design-Issues" class="headerlink" title="Design Issues"></a>Design Issues</h2><ul>
-<li>Addressing</li>
-<li>Error Control</li>
-<li>Flow control</li>
-<li>routing</li>
-<li>Multiplexing and de-mutiplexing</li>
+            <h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><ul>
+Learn 6 elementary DLL protocol
+Learn & master sliding-window
+Learn & master ARQ（自动重复请求）/PAR
+Learn & master piggybacking(捎带确认)
+Other: pipeline, NAK
+
+
+<h2 id="Elementary-DLL-protocol"><a href="#Elementary-DLL-protocol" class="headerlink" title="Elementary DLL protocol"></a>Elementary DLL protocol</h2><p>Assumption:（前提）</p>
+<ul>
+<li>物理层，DDL层和网络层都是独立的过程</li>
+<li>两个设备之间发送一个长数据需要一个可靠，面向连接的服务</li>
+<li>数据链路层请求数据，网络层总是能够立即响应。</li>
+<li>这些协议处理通信错误，但不处理由计算机崩溃和重新启动引起的问题。</li>
+<li>就数据链路层而言，从网络层通过接口传递给它的数据包是纯数据。</li>
+</ul>
+
+<p><br><br></p>
+<p>3 simplex protocol:</p>
+<ul>
+<li>An unrestricted simplex protocol(无限制的单工协议)</li>
+<li>A simplex stop-and-wait protocol(单工的仃—等协议 )</li>
+<li>A simplex protocol for a noisy channel(有噪声信道的单工协议)</li>
+
+</ul>
+
+<h3 id="Protocol-Declaration"><a href="#Protocol-Declaration" class="headerlink" title="Protocol Declaration"></a>Protocol Declaration</h3><p>文件类型一般定义为protocol.h<br><br><br>Wait for event(&amp;event):<br><br>用过程调用 wait for event (&amp;event ）标示数据链路层正在等待事情发生。只<br>有当确实发生了什么事情（比如，到达了一个帧），该过程才返回。过程返回时，变量event 说明究竟发生了什么事件。<br><br>当一帧到达接收方，校验和被重新计算。如果计算出的帧校验和不正确（即发生了传输错误），则数据链路层会收到通知（ event &#x3D; cksum err ）。如果到达的帧没有受到任何损坏，数据链路层也会接到通知（ event&#x3D;frame arrival ）<br><br><br>Timer：<br>包括start_timer和stop_timer以及 start_ack_timer和stop_ack_timer<br><br></p>
+<p>frame的结构：</p>
+<ul>
+<li>frame_kind kind</li>
+<li>seq_nr seq(序号)</li>
+<li>seq_nr ack（确认号）</li>
+<li>packet info（实际内容）</li>
+</ul>
+seq 是序号， ack 是确认号，大小均为4字节（注意与大写的 ACK 不同， ACK 是6个控制位之一，大小只有一位， 仅当 ACK =1 时 ack 字段才有效。
+
+<h3 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h3><h4 id="Unrestricted-Simplex-Protocol（一个乌托邦式的单工协议）（协议1）"><a href="#Unrestricted-Simplex-Protocol（一个乌托邦式的单工协议）（协议1）" class="headerlink" title="Unrestricted Simplex Protocol（一个乌托邦式的单工协议）（协议1）"></a>Unrestricted Simplex Protocol（一个乌托邦式的单工协议）（协议1）</h4><p>特点：</p>
+<ul>
+<li>数据单向传输</li>
+<li>发送和接收网络层总是就绪的</li>
+<li>处理时间可以忽略不计(瞬间完成)</li>
+<li>有很多个buffer空间可以用</li>
+<li>数据链路层之间的通信通道不会损坏或丢失帧</li>
+</ul>
+发送方和接收方都是用一个while（无限循环的）来实现
+
+<h4 id="Simplex-Stop-and-Wait-Protocol（无错信道上的单工停．等式协议）（协议2）"><a href="#Simplex-Stop-and-Wait-Protocol（无错信道上的单工停．等式协议）（协议2）" class="headerlink" title="Simplex Stop-and-Wait Protocol（无错信道上的单工停．等式协议）（协议2）"></a>Simplex Stop-and-Wait Protocol（无错信道上的单工停．等式协议）（协议2）</h4><p>问题：接收器的处理能力是有限的:接收器只有有限的缓冲容量和有限的处理速度。<br><br>特点：</p>
+<ul>
+<li>只有一个有限的缓冲容量和一个有限的处理规格（放弃不切实际的限制</li>
+<li>只需在协议1中插入一个延迟</li>
+<li>接收方向发送方提供反馈</li>
+<li>发送方发送一个帧，然后在继续之前等待确认的协议称为停止-等待</li>
+</ul>
+
+<p>注意：</p>
+<ul>
+<li>数据流量是单向的，但是帧可以在两个方向上传输。</li>
+<li>两个数据链路层之间的通信通道需要具有双向信息传输的能力。（一个半双工物理通道就足够了）</li>
+<li>Data flow：首先发送方发送一个帧，然后接收方发送一个帧，然后发送方发送另一个帧，然后接收方发送另一个帧，以此类推。</li>
+</ul>
+
+<h4 id="有错信道上的单工停－等式协议（Simplex-Protocol-for-a-Noisy-Channel）（协议3）"><a href="#有错信道上的单工停－等式协议（Simplex-Protocol-for-a-Noisy-Channel）（协议3）" class="headerlink" title="有错信道上的单工停－等式协议（Simplex Protocol for a Noisy Channel）（协议3）"></a>有错信道上的单工停－等式协议（Simplex Protocol for a Noisy Channel）（协议3）</h4><p>问题：考虑比较常规的情形，即通信信道可能会出错。帧可能会被损坏，也可能完全被丢失。<br><br>一种使用定时器和确认的方案:<br>发送方发送一个帧后启动一个定时器。接收方只有在正确接收到传入帧时才会发回确认。如果计时器过期，发送方将重传该帧<br><br>如果在一个协议中，发送方在前移到下一个数据之前必须等待一个肯定确认，这样的协议称为自动重复请求（ ARQ , Automatic Repeat reQuest ）或带有重传的肯定确认（PAR, Positive Acknowledgement with Retransmission ）<br><br>与协议2类似，这类协议也只在一个方向上传输数据<br><br></p>
+<p>PAR的致命缺点:Loss of an acknowledgement的时候会导致duplicated frame</p>
+<h4 id="Sliding-window-protocol（滑动窗口协议）（包含三个协议）"><a href="#Sliding-window-protocol（滑动窗口协议）（包含三个协议）" class="headerlink" title="Sliding window protocol（滑动窗口协议）（包含三个协议）"></a>Sliding window protocol（滑动窗口协议）（包含三个协议）</h4><p>前面的问题：不太高效<br><br>方法：<ul></p>
+<li>full-duplex （全双工）
+</li>
+<li>piggybacking （捎带确认）
+</li>
+<li>sliding window （滑动窗口）（flow control）</li>
+</ul>
+
+<p>全双工：两种办法：<br><br>一种：实现全双工数据传输的一种办法是运行前面协议的两个实例，每个实例使用一条独立的链路进行单工数据传输（在不同的方向〉。因此，每条链路由一个“前向”信道（用于数据〉和一个“逆向”信道（用于确认〉组成。两种情况下的逆向信道带宽几乎完全被浪<br><br>两种：使用同一条链路来传输两个方向上的数据，这种模型中，从机器A到机器B的数据帧可以与从机器A到机器B的确认帧混合在一起。接收方只要检查入境帧头部的 kind 字段，就可以区别出该帧是数据帧还是确认帧<br><br><br>稍待确认：当到达一个数据帧时，接收方并不是立即发送一个单独的控制帧；而是抑制自己并开始等待，直到网络层传递给它下一个要发送的数据包。然后，确认信息被附加在往外发送的数据帧上（使用帧头的 ack 宇段〉。实际上，确认信息搭了下一个出境数据帧的便车。这种暂时延缓确认以便将确认信息搭载在下一个出境数据帧上的技术就称为捎带确认 piggybacking （至于等多久，可以设定一个固定的毫秒数）<br><br><br>三个协议（全是双向的）：</p>
+<ul>
+<li>Protocol 4：n=1——basic idea of sliding window</li>
+<li>Protocol 5： Go Back n （回退n帧）</li>
+<li>Protocol 6： Select Repeat （选择性重传）</li>
+</ul>
+
+<p>三个协议的特点：<br></p>
+<ul>
+</li>在这3个协议中，任何一个出境帧都包含一个序号，范围从0到某个最大值。序号的最大值通常是 2^n-1 ，这样序号正好可以填入到一个n位的字段中。停-等式滑动窗口协议使用 n=l ，限制了序号只能是 0和1，但是更加复杂的协议版本可以使用任意的 n。</li>
+<li>所有滑动窗口协议的本质是在任何时刻发送方总是维持着一组序号，分别对应于允许它发送的帧。我们称这些帧落在发送窗口（sending window ）内。类似地，接收方也维持着一个接收窗口（receiving window ），对应于一组允许它接受的帧。</li>
+<li>即数据链路层协议将数据包递交给网络层的次序必须与发送机器上数据包从网络层被传递给数据链路层的次序相同。我们同样也不能改变这样的需求：物理通信信道就像一根“线”，也就是说，它必须按照发送的顺序递交所有的帧。</li>
+<li>发送方窗口内的序号代表了那些可以被发送的帧，或者那些已经被发送但还没有被确认的帧。任何时候当有新的数据包从网络层到来时，它被赋予窗口中的下一个最高序号，并且窗口的上边界前移一格。当收到一个确认时，窗口的下边界也前移一格。按照这种方法发送窗口持续地维持了一系列未被确认的帧。</li>
+<li>由于当前在发送方窗口内的帧最终有可能在传输过程中丢失或者被损坏，所以，发方必须在内存中保存所有这些帧，以便满足可能的重传需要。因此 如果最大的窗口尺，则发送方需要 个缓冲区来存放未被确认的帧。如果窗口在某个时候达到了它的最
+大尺寸，则发送方的数据链路层必须强行关闭网络层，直到有一个缓冲区空闲出来为止。</li>
+<li>接收方数据链路层的窗口对应于它可以接受的帧。任何落在窗口内的帧被放入接收方的缓冲区。 收到1个帧，而且其序号等于窗口下边界时，接收方将它传递给网络层，并将整个窗口向前移动1 个位置。任何落在窗口外面的帧都将被丢弃。在所有情况下，接收方都要生成一个确认并返回给发送方，以便发送方知道该如何处理。请注意，窗口大小为1意味着数据链路层只能按顺序接受帧，但是对于大 点的窗口，这一条便不再成立。相反，网络层总是按照正确的顺序接受数据 跟数据链路层的窗口大小没有关系。</li>
+<li>与发送方窗口不同 接收方窗口始终保持着它的初始大小，窗口的旋转意味着下一帧被接受并被传递到网络层。(接收端维护一个接收窗口，其序列号与允许接收的帧相对应。当接收到序列号等于窗口下缘的帧时，将其传递给网络层，生成确认，并将窗口旋转1次。)</li>
+例子：<img src=' '>
+过程：接收方:接收帧后，检查序列号是否为frame_expected(帧)，如果是，接收它并frame_expected+1，这是滑动接收窗口。发送方:当接收到确认帧时，检查ack_number是否为next_frame_to_send，如果是，从network_layer和next_frame_to_send+1中获取数据包，这是滑动的sending_window<br>
+
+<h5 id="Principle-of-protocol-4-1位滑动窗口协议"><a href="#Principle-of-protocol-4-1位滑动窗口协议" class="headerlink" title="Principle of protocol 4(1位滑动窗口协议)"></a>Principle of protocol 4(1位滑动窗口协议)</h5><p>Def:1个窗口尺寸为1的滑动窗口协议。由于发送方在发出 帧以后， 必须等待前1帧的确认到来才能发送下1 帧，所以这样的协议使用了停-等式办法<br><br><br><br>Window setting：</p>
+<ul>
+<li>Sliding window maximum：MAX_SEQ = 1(最多能同时接收一个)</lizx>
+<li>Initial value：seq =0, ack=1（期待接收seq=0）</li>
+</ul>
+<br><br>
+Window sliding scheme：
+<ul>
+</li>A send frame firstly（seq=0, ack=1, A0）</li>
+</li>B receive A0，send back piggyback-acknowledge （seq=0, ack=0, B0） </li>
+</li>A receive acknowledge （to A0），sliding window，send next frame（seq=1, ack=0, A1）</li>
+</ul>
+<br><br>
+characteristic
+<ul>
+<li>序列号seq和确认值ack“0”“1”交替</li>
+<li>滑动窗口长度W=1，收到确认才移动窗口</li>
+<li>保证按顺序将接收到的正确帧只一次上交网络层</li>
 </ul>
 
 
-<h1 id="Layered-Model"><a href="#Layered-Model" class="headerlink" title="Layered Model"></a>Layered Model</h1><h2 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h2><p>Structure： 7 tiers<br><br>Physis-&gt;Data Link-&gt;Newtwork-&gt;transport-&gt;Session-&gt;Presentation-&gt;Application<br><br><br><br>Advantage：减少复杂性，标准化的接口可以交换信息，模块化工程不影响相互，确保互操作性，加速进化，容易教和学。<br></p>
-<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Network processes to application<br>就是应用，提供网络服务比如电子邮件 文件传输等</p>
-<h3 id="Presentation"><a href="#Presentation" class="headerlink" title="Presentation"></a>Presentation</h3><p>Data Representation<br><br>保证接受系统数据的可读性，数据的形式结构等</p>
-<h3 id="Session（对话）"><a href="#Session（对话）" class="headerlink" title="Session（对话）"></a>Session（对话）</h3><p>Interhost communication<br><br>建立 应用 管理应用层之间的对话</p>
-<h3 id="Transport"><a href="#Transport" class="headerlink" title="Transport"></a>Transport</h3><p>End-to-end connections<br><br>信息realiable传输，建立维护终结虚拟电路，控制信息流，关心host之间的数据传输问题</p>
-<h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><p>Addresses and best path<br><br>在两端系统中提供连接和路径选择，路由领域</p>
-<h3 id="Data-Link"><a href="#Data-Link" class="headerlink" title="Data Link"></a>Data Link</h3><p>Access to media<br><br>通过介质提供可靠的信息传输，物理地址，网络，拓扑，错误分析等</p>
-<h3 id="Physical"><a href="#Physical" class="headerlink" title="Physical"></a>Physical</h3><p>Binary transmition<br><br>转接头的大小，电压，材料这些光电性质</p>
-<h2 id="TCP-IP-Model"><a href="#TCP-IP-Model" class="headerlink" title="TCP&#x2F;IP Model"></a>TCP&#x2F;IP Model</h2><p>Structure: Network Interface-&gt;Internet-&gt;Transport-&gt;Application</p>
-<h2 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h2><p>不同层之fatkun间有自己的协议，这是一个水平的概念<br><br>协议更像一种运行的程序<br><br>单位：DDL是帧（frame），网络层是数据包（Packet），传输层是Segment（数据段），物理层是二进制（bit）<br><br>这个网站介绍了所有的协议：<br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/477662535" >https://zhuanlan.zhihu.com/p/477662535 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>服务是一个竖直的概念，下一层给上一层提供服务。</p>
-<h2 id="Encapsulation（封装）"><a href="#Encapsulation（封装）" class="headerlink" title="Encapsulation（封装）"></a>Encapsulation（封装）</h2><p>发出信息的人从顶层开始逐层向下，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。</p>
-<h1 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h1><p>在网络发展的早期，各个互联网公司都有自己的一套标准，在某些功能和接口上并不统一，兼容性很差。IBM公司首先推出了系统网络体系结构SNA，随后DEC公司宣布了自己的数字网络体系结构DNA，这就是两套不同的标准。<br><br><br>许多组织发挥了很有用的作用：美国国家标准化协会（ANSI），<br>电气电子工程协会（IEEE），<br>国际电信联盟（ITU），<br>国际标准化组织（ISO），<br>Internet协会（ISOC）和相关的Internet工程任务组（IETF），<br>电子工业联合会（EIA）和相关的通信工业联合会（TIA）</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 
@@ -298,16 +412,16 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Architecture</li>
+        <li><strong>Title:</strong> data link layer(二)</li>
         <li><strong>Author:</strong> 杨小鹤</li>
-        <li><strong>Created at:</strong> 2023-08-31 17:32:39</li>
+        <li><strong>Created at:</strong> 2023-09-25 09:02:54</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-09-08 08:35:28
+                <strong>Updated at:</strong> 2023-09-25 17:44:59
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2023/08/31/CN2/
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/09/25/CN5/
         </li>
         <li>
             <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
@@ -336,13 +450,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2023/08/31/os_1/"
+                        href="/2023/09/26/os_4/"
                         >
                             <span class="left arrow-icon flex-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Operating System(Intro)</span>
+                                <span class="post-nav-title-item">Threads and processes</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -352,10 +466,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/08/28/CN1/"
+                        href="/2023/09/20/CV2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Computer Networs (Intro)</span>
+                                <span class="post-nav-title-item">几何表示</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -420,8 +534,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Architecture</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-design"><span class="nav-text">How to design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Issues"><span class="nav-text">Design Issues</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Layered-Model"><span class="nav-text">Layered Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI"><span class="nav-text">OSI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Application"><span class="nav-text">Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Presentation"><span class="nav-text">Presentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session%EF%BC%88%E5%AF%B9%E8%AF%9D%EF%BC%89"><span class="nav-text">Session（对话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transport"><span class="nav-text">Transport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network"><span class="nav-text">Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Link"><span class="nav-text">Data Link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Physical"><span class="nav-text">Physical</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP-Model"><span class="nav-text">TCP&#x2F;IP Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol"><span class="nav-text">Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation%EF%BC%88%E5%B0%81%E8%A3%85%EF%BC%89"><span class="nav-text">Encapsulation（封装）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Standardization"><span class="nav-text">Standardization</span></a></li></ol>
+        <div class="page-title">data link layer(二)</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-text">Content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Elementary-DLL-protocol"><span class="nav-text">Elementary DLL protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-Declaration"><span class="nav-text">Protocol Declaration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol"><span class="nav-text">Protocol</span></a></li></ol></li></ol>
 
     </div>
 </div>

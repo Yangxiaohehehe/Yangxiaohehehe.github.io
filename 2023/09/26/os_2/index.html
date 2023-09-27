@@ -13,22 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/08/31/cn2/"/>
+    <link rel="canonical" href="http://example.com/2023/09/26/os_2/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="第一章也是普通的介绍罢了，更多是概念，没啥实质性地内容。 How to designDesign Issues Addressing Error Control Flow control routing Multiplexing and de-mutiplexing    Layered ModelOSIStructure： 7 tiersPhysis-&gt;Data Link-&gt;Newt">
+        <meta name="description" content="软件体系结构Monolithic System（单片系统）Def：将 电脑 或其他 电子 系统 集成到单一芯片的 集成电路 Def: 就是所有的系统操作放入一个单独文件里，OS是所有一步步的合集，每一个都可以调用其他的所有步骤、Example: Windows LInux Layered SystemDef：OS像一个等级分成制度组成的Classic Layer： “THE” OS 有六层结构 M">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Architecture">
-<meta property="og:url" content="http://example.com/2023/08/31/CN2/index.html">
+<meta property="og:title" content="Threads and processes（一）">
+<meta property="og:url" content="http://example.com/2023/09/26/os_2/index.html">
 <meta property="og:site_name" content="杨小鹤">
-<meta property="og:description" content="第一章也是普通的介绍罢了，更多是概念，没啥实质性地内容。 How to designDesign Issues Addressing Error Control Flow control routing Multiplexing and de-mutiplexing    Layered ModelOSIStructure： 7 tiersPhysis-&gt;Data Link-&gt;Newt">
+<meta property="og:description" content="软件体系结构Monolithic System（单片系统）Def：将 电脑 或其他 电子 系统 集成到单一芯片的 集成电路 Def: 就是所有的系统操作放入一个单独文件里，OS是所有一步步的合集，每一个都可以调用其他的所有步骤、Example: Windows LInux Layered SystemDef：OS像一个等级分成制度组成的Classic Layer： “THE” OS 有六层结构 M">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-31T09:32:39.595Z">
-<meta property="article:modified_time" content="2023-09-08T00:35:28.176Z">
+<meta property="article:published_time" content="2023-09-26T06:35:59.220Z">
+<meta property="article:modified_time" content="2023-09-26T06:36:13.121Z">
 <meta property="article:author" content="Yang Xiaohe">
-<meta property="article:tag" content="Computer Networks">
+<meta property="article:tag" content="Operating System">
 <meta name="twitter:card" content="summary">
     
     
@@ -41,7 +41,7 @@
     
     <title>
         
-            Architecture -
+            Threads and processes（一） -
         
         GGbond&#39; blog
     </title>
@@ -203,7 +203,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Architecture</h1>
+                <h1 class="article-title-regular">Threads and processes（一）</h1>
             
             </div>
             
@@ -225,15 +225,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-08-31 17:32:39</span>
-        <span class="mobile">2023-08-31 17:32:39</span>
+        <span class="desktop">2023-09-26 14:35:59</span>
+        <span class="mobile">2023-09-26 14:35:59</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-08 08:35:28</span>
-            <span class="mobile">2023-09-08 08:35:28</span>
+            <span class="desktop">2023-09-26 14:36:13</span>
+            <span class="mobile">2023-09-26 14:36:13</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -245,7 +245,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Computer-Networks/">Computer Networks</a>&nbsp;
+                        <a href="/tags/Operating-System/">Operating System</a>&nbsp;
                     </li>
                 
             </ul>
@@ -268,29 +268,68 @@
         
 
         <div class="article-content markdown-body">
-            <p>第一章也是普通的介绍罢了，更多是概念，没啥实质性地内容。</p>
-<h1 id="How-to-design"><a href="#How-to-design" class="headerlink" title="How to design"></a>How to design</h1><h2 id="Design-Issues"><a href="#Design-Issues" class="headerlink" title="Design Issues"></a>Design Issues</h2><ul>
-<li>Addressing</li>
-<li>Error Control</li>
-<li>Flow control</li>
-<li>routing</li>
-<li>Multiplexing and de-mutiplexing</li>
+            <h1 id="软件体系结构"><a href="#软件体系结构" class="headerlink" title="软件体系结构"></a>软件体系结构</h1><h2 id="Monolithic-System（单片系统）"><a href="#Monolithic-System（单片系统）" class="headerlink" title="Monolithic System（单片系统）"></a>Monolithic System（单片系统）</h2><p>Def：将 电脑 或其他 电子 系统 集成到单一芯片的 集成电路 <br><br>Def: 就是所有的系统操作放入一个单独文件里，OS是所有一步步的合集，每一个都可以调用其他的所有步骤、<br><br>Example: Windows LInux</p>
+<h2 id="Layered-System"><a href="#Layered-System" class="headerlink" title="Layered System"></a>Layered System</h2><p>Def：OS像一个等级分成制度组成的<br>Classic Layer： “THE” OS 有六层结构</p>
+<h2 id="Microkernels-Question"><a href="#Microkernels-Question" class="headerlink" title="Microkernels(Question)"></a>Microkernels(Question)</h2><p>Def:指的是软件的内核相对较小，主要功能和业务逻辑都通过插件实现。<br><br>Def: 把OS分成一个个模块，只有一个运行在kernel mode中其他的在user mode<br>为改进系统可靠性，把OS能小就小放进kernel mode中<br>Example：MINIX 3<br>Advantage:</p>
+<ul>
+<li>良好的功能延伸性（extensibility），需要什么功能，开发一个插件即可</li>
+<li>功能之间是隔离的，插件可以独立的加载和卸载，使得它比较容易部署</li>
+<li>可定制性高，适应不同的开发需要</li>
+<li>可以渐进式地开发，逐步增加功能</li>
+</ul>
+<br>
+Disadvantage:
+<ul>
+<li>扩展性（scalability）差，内核通常是一个独立单元，不容易做成分布式</li>
+<li>开发难度相对较高，因为涉及到插件与内核的通信，以及内部的插件登记机制</li>
 </ul>
 
+<h2 id="Client-Server-Model"><a href="#Client-Server-Model" class="headerlink" title="Client-Server Model"></a>Client-Server Model</h2><p>Def:一切将服务提供者（服务器）和服务消费者（客户端）分开的分布式计算模式。各个计算机之间以客户机和服务器的关系进行工作与交换信息，客户机首先向服务器发送请求，然后服务器完成请求的操作，并把结果返回给客户机。<br></p>
+<h1 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h1><h2 id="Multiprogramming（区别于Multiprocess）"><a href="#Multiprogramming（区别于Multiprocess）" class="headerlink" title="Multiprogramming（区别于Multiprocess）"></a>Multiprogramming（区别于Multiprocess）</h2><p>Def: 当电脑启动的时候，很多程序同时运行<br><br><br>Multiprogramming 强调的场景是，<em>当只有一个 CPU 的时候</em>，可以运行多个程序 program 让整个系统看起来是并发的；而其实一个 CPU 并不能够完成真正的并发，所谓的多个 program 同时运行也不过是 CPU 在不同任务之间轮转的表象。<br><br>就算是一个 program 同一个 stage 的两个部分，也只能转成顺序的方式一先一后地执行。</p>
+<h2 id="Process-Creation"><a href="#Process-Creation" class="headerlink" title="Process Creation"></a>Process Creation</h2><p>Events that cause process creation：系统初始化，由正在运行的进程创建。用户请求创建新进程，启动一个任务<br>Foreground processes（前台进程）<br>Background process（后台进程）</p>
+<h2 id="Process-Termination"><a href="#Process-Termination" class="headerlink" title="Process Termination"></a>Process Termination</h2><p>Condition that cause process Termination</p>
+<ul>
+<li>Normal exit</li>
+<li>Error exit</li>
+<li>Fatal error</li>
+<li>Killed by another process</li>
+</ul>
+下面两个不是自愿 上面两个是
 
-<h1 id="Layered-Model"><a href="#Layered-Model" class="headerlink" title="Layered Model"></a>Layered Model</h1><h2 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h2><p>Structure： 7 tiers<br><br>Physis-&gt;Data Link-&gt;Newtwork-&gt;transport-&gt;Session-&gt;Presentation-&gt;Application<br><br><br><br>Advantage：减少复杂性，标准化的接口可以交换信息，模块化工程不影响相互，确保互操作性，加速进化，容易教和学。<br></p>
-<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Network processes to application<br>就是应用，提供网络服务比如电子邮件 文件传输等</p>
-<h3 id="Presentation"><a href="#Presentation" class="headerlink" title="Presentation"></a>Presentation</h3><p>Data Representation<br><br>保证接受系统数据的可读性，数据的形式结构等</p>
-<h3 id="Session（对话）"><a href="#Session（对话）" class="headerlink" title="Session（对话）"></a>Session（对话）</h3><p>Interhost communication<br><br>建立 应用 管理应用层之间的对话</p>
-<h3 id="Transport"><a href="#Transport" class="headerlink" title="Transport"></a>Transport</h3><p>End-to-end connections<br><br>信息realiable传输，建立维护终结虚拟电路，控制信息流，关心host之间的数据传输问题</p>
-<h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><p>Addresses and best path<br><br>在两端系统中提供连接和路径选择，路由领域</p>
-<h3 id="Data-Link"><a href="#Data-Link" class="headerlink" title="Data Link"></a>Data Link</h3><p>Access to media<br><br>通过介质提供可靠的信息传输，物理地址，网络，拓扑，错误分析等</p>
-<h3 id="Physical"><a href="#Physical" class="headerlink" title="Physical"></a>Physical</h3><p>Binary transmition<br><br>转接头的大小，电压，材料这些光电性质</p>
-<h2 id="TCP-IP-Model"><a href="#TCP-IP-Model" class="headerlink" title="TCP&#x2F;IP Model"></a>TCP&#x2F;IP Model</h2><p>Structure: Network Interface-&gt;Internet-&gt;Transport-&gt;Application</p>
-<h2 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h2><p>不同层之fatkun间有自己的协议，这是一个水平的概念<br><br>协议更像一种运行的程序<br><br>单位：DDL是帧（frame），网络层是数据包（Packet），传输层是Segment（数据段），物理层是二进制（bit）<br><br>这个网站介绍了所有的协议：<br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/477662535" >https://zhuanlan.zhihu.com/p/477662535 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>服务是一个竖直的概念，下一层给上一层提供服务。</p>
-<h2 id="Encapsulation（封装）"><a href="#Encapsulation（封装）" class="headerlink" title="Encapsulation（封装）"></a>Encapsulation（封装）</h2><p>发出信息的人从顶层开始逐层向下，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。</p>
-<h1 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h1><p>在网络发展的早期，各个互联网公司都有自己的一套标准，在某些功能和接口上并不统一，兼容性很差。IBM公司首先推出了系统网络体系结构SNA，随后DEC公司宣布了自己的数字网络体系结构DNA，这就是两套不同的标准。<br><br><br>许多组织发挥了很有用的作用：美国国家标准化协会（ANSI），<br>电气电子工程协会（IEEE），<br>国际电信联盟（ITU），<br>国际标准化组织（ISO），<br>Internet协会（ISOC）和相关的Internet工程任务组（IETF），<br>电子工业联合会（EIA）和相关的通信工业联合会（TIA）</p>
+<h2 id="Process-states"><a href="#Process-states" class="headerlink" title="Process states"></a>Process states</h2><p>Three state: 执行体Running state(用CPU), Blocked state（不可运行的）, Ready state（可运行的，暂时等待让其他的先跑）<br><br><br><br>Running-&gt;Ready-&gt;Runing<br>Running-&gt;Blocked -&gt;Ready</p>
+<h2 id="Process-Scheduling"><a href="#Process-Scheduling" class="headerlink" title="Process Scheduling"></a>Process Scheduling</h2><p>每一个process，OS对其都有一个PCB（process control block）<br><br>Def of PCB:PCB作为进程实体的一部分，记录了操作系统所需的，用于描述进程的当前情况以及管理进程运行的全部信息<br><br><br>Function:PCB能实现间断性运行方式。在多道程序环境下，程序是采用停停走走间断性的运行方式运行的。当进程因阻塞而暂停运行时，它必须保留自己运行时的CPU现场信息。在有了PCB后，系统就可以将CPU现场信息保存在被中断进程的PCB中，供该进程再次被调度执行时恢复CPU现场时使用<br><br></p>
+<h1 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h1><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Def： 一个进程可以有多个线程，线程是进程的组成，线城市可以被调度单独管理的最小programmed指令。<br><br>Function： Responsiveness(可以同时完成),Resource Sharing（分享进程中的资源和内存）,Economy（容易产生和关闭）,Utilization of multiprocessor Architectures（可以提高CPU利用率）<br><br>Example: 就是同时使用键盘，写入word保存到DISK，三个线程操作<br><br>每一个process都至少一个主线程<br><br><br></p>
+<h2 id="Thread-Model"><a href="#Thread-Model" class="headerlink" title="Thread Model"></a>Thread Model</h2><p>Thread Model：在一个进程中，有些项可以被所有线程共享，有些是private的<br><br>共享的：</p>
+<ul>
+<li>内存地址空间</li>
+<li>进程基础信息</li>
+<li>大部分数据</li>
+<li>打开的文件</li>
+<li>信号处理</li>
+<li>当前工作目录</li>
+<li>用户和用户组属性<.li>
+</ul>
+自己独有的：
+<ul>
+<li>线程ID</li>
+<li>一系列的寄存器</li>
+<li>栈的局部变量和返回地址</li>
+<li>错误码 errno</li>
+<li>信号掩码</li>
+<li>优先级</li>
+</ul>
+
+<p><br><br><br>characteristic:主线程关闭子线程也会结束。</p>
+<h2 id="Difference（线程和进程）"><a href="#Difference（线程和进程）" class="headerlink" title="Difference（线程和进程）"></a>Difference（线程和进程）</h2><p>Process：used to group resources together（用于把资源组合在一起）<br><br><br>Thread: the entity scheduled for execution on the CPU(具体在CPU上执行的东西)</p>
+<h2 id="POSIX-Threads（-Portable-Operating-System-Interface）"><a href="#POSIX-Threads（-Portable-Operating-System-Interface）" class="headerlink" title="POSIX Threads（ Portable Operating System  Interface）"></a>POSIX Threads（ Portable Operating System  Interface）</h2><p>POSIX：可移植操作系统接口，是基于Unix操作系统的标准OS接口的合集。</p>
+<h2 id="Implementing-of-threads"><a href="#Implementing-of-threads" class="headerlink" title="Implementing of threads"></a>Implementing of threads</h2><h3 id="Implementing-threads-in-user-space"><a href="#Implementing-threads-in-user-space" class="headerlink" title="Implementing threads in user space"></a>Implementing threads in user space</h3><p>优点：fast，轻便，可扩展的<br><br><br>缺点：</p>
+<ol>
+<li>Blocking会阻塞一个process中的所有线程 </li>
+<li>再多进程中没有线程水平上的并行</li>
+</ol> 
+
+<h3 id="Implement-threads-in-kernel"><a href="#Implement-threads-in-kernel" class="headerlink" title="Implement threads in kernel"></a>Implement threads in kernel</h3><p>Def:内核创建一些内核线程来执行一些后台任务。相对于普通的进程，内核线程完整的存在于内核空间，是没有自己的地址空间的，也就是mm指针为空，它的操作仅存在于内核态，并且也不会上下文切换到用户态。不过内核线程和普通进程类似的是，是可调度和可抢占的。<br><br>优点：Blocking 只阻塞一些线程，并且支持线程水平上的并行<br><br><br>缺点：线程管理非常缓慢，需要一个大的线程表（thread tables）</p>
+<h3 id="Hybrid-Implementations（混合实现）"><a href="#Hybrid-Implementations（混合实现）" class="headerlink" title="Hybrid Implementations（混合实现）"></a>Hybrid Implementations（混合实现）</h3><p>Def：在内核线程上复用用户级线程。内核只知道内核级别的线程并调度它们。更灵活，但也更复杂。Mاiمادuممr hronde</p>
 
         </div>
 
@@ -298,16 +337,16 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Architecture</li>
+        <li><strong>Title:</strong> Threads and processes（一）</li>
         <li><strong>Author:</strong> 杨小鹤</li>
-        <li><strong>Created at:</strong> 2023-08-31 17:32:39</li>
+        <li><strong>Created at:</strong> 2023-09-26 14:35:59</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-09-08 08:35:28
+                <strong>Updated at:</strong> 2023-09-26 14:36:13
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2023/08/31/CN2/
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/09/26/os_2/
         </li>
         <li>
             <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
@@ -322,7 +361,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/Computer-Networks/">#Computer Networks</a>&nbsp;
+                        <a href="/tags/Operating-System/">#Operating System</a>&nbsp;
                     </li>
                 
             </ul>
@@ -336,13 +375,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2023/08/31/os_1/"
+                        href="/2023/09/27/sw4/"
                         >
                             <span class="left arrow-icon flex-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Operating System(Intro)</span>
+                                <span class="post-nav-title-item">Software Engineering(Software process)</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -352,10 +391,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/08/28/CN1/"
+                        href="/2023/09/26/os_4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Computer Networs (Intro)</span>
+                                <span class="post-nav-title-item">Threads and processes</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -420,8 +459,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Architecture</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-design"><span class="nav-text">How to design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Issues"><span class="nav-text">Design Issues</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Layered-Model"><span class="nav-text">Layered Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI"><span class="nav-text">OSI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Application"><span class="nav-text">Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Presentation"><span class="nav-text">Presentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session%EF%BC%88%E5%AF%B9%E8%AF%9D%EF%BC%89"><span class="nav-text">Session（对话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transport"><span class="nav-text">Transport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network"><span class="nav-text">Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Link"><span class="nav-text">Data Link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Physical"><span class="nav-text">Physical</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP-Model"><span class="nav-text">TCP&#x2F;IP Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol"><span class="nav-text">Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation%EF%BC%88%E5%B0%81%E8%A3%85%EF%BC%89"><span class="nav-text">Encapsulation（封装）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Standardization"><span class="nav-text">Standardization</span></a></li></ol>
+        <div class="page-title">Threads and processes（一）</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">软件体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Monolithic-System%EF%BC%88%E5%8D%95%E7%89%87%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="nav-text">Monolithic System（单片系统）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layered-System"><span class="nav-text">Layered System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microkernels-Question"><span class="nav-text">Microkernels(Question)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client-Server-Model"><span class="nav-text">Client-Server Model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Process"><span class="nav-text">Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiprogramming%EF%BC%88%E5%8C%BA%E5%88%AB%E4%BA%8EMultiprocess%EF%BC%89"><span class="nav-text">Multiprogramming（区别于Multiprocess）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-Creation"><span class="nav-text">Process Creation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-Termination"><span class="nav-text">Process Termination</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-states"><span class="nav-text">Process states</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-Scheduling"><span class="nav-text">Process Scheduling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread"><span class="nav-text">Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thread-Model"><span class="nav-text">Thread Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference%EF%BC%88%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%EF%BC%89"><span class="nav-text">Difference（线程和进程）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POSIX-Threads%EF%BC%88-Portable-Operating-System-Interface%EF%BC%89"><span class="nav-text">POSIX Threads（ Portable Operating System  Interface）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementing-of-threads"><span class="nav-text">Implementing of threads</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-threads-in-user-space"><span class="nav-text">Implementing threads in user space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implement-threads-in-kernel"><span class="nav-text">Implement threads in kernel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hybrid-Implementations%EF%BC%88%E6%B7%B7%E5%90%88%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="nav-text">Hybrid Implementations（混合实现）</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
