@@ -13,27 +13,23 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/09/27/sw5/"/>
+    <link rel="canonical" href="http://example.com/2023/10/07/cn7/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="INtroDef：Graphical（visual communication aid） and Mathematical modeling（state equations, algebraic equations, etc） tools 类型：并发、异步、分布式、并行、不确定和&#x2F;或随机系统结构：place、transition和弧（arc）组成。弧从一个place运行到一个transi">
+        <meta name="description" content="IntroMAC（Medium Access Control）属于Data link layer，接近于physical layer  Multiple access protocol A real system(LAN): Ethernet DLL SWitching（网桥和交换机）      广播网络的problemData communication的方式有三种：  Unicast(一对一)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Software Engineering(Petri Nets)">
-<meta property="og:url" content="http://example.com/2023/09/27/sw5/index.html">
+<meta property="og:title" content="data link layer(四)（MAC）">
+<meta property="og:url" content="http://example.com/2023/10/07/CN7/index.html">
 <meta property="og:site_name" content="杨小鹤">
-<meta property="og:description" content="INtroDef：Graphical（visual communication aid） and Mathematical modeling（state equations, algebraic equations, etc） tools 类型：并发、异步、分布式、并行、不确定和&#x2F;或随机系统结构：place、transition和弧（arc）组成。弧从一个place运行到一个transi">
+<meta property="og:description" content="IntroMAC（Medium Access Control）属于Data link layer，接近于physical layer  Multiple access protocol A real system(LAN): Ethernet DLL SWitching（网桥和交换机）      广播网络的problemData communication的方式有三种：  Unicast(一对一)">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2023/09/27/sw5/index.html">
-<meta property="og:image" content="http://example.com/2023/09/27/sw5/index.html">
-<meta property="og:image" content="http://example.com/2023/09/27/sw5/index.html">
-<meta property="article:published_time" content="2023-09-27T07:02:43.530Z">
-<meta property="article:modified_time" content="2023-10-08T09:53:54.935Z">
+<meta property="article:published_time" content="2023-10-07T01:22:28.276Z">
+<meta property="article:modified_time" content="2023-10-07T03:54:02.124Z">
 <meta property="article:author" content="Yang Xiaohe">
-<meta property="article:tag" content="Software Engineering">
+<meta property="article:tag" content="Computer Networks">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/09/27/sw5/index.html">
     
     
     <!--- Icon Part-->
@@ -45,7 +41,7 @@
     
     <title>
         
-            Software Engineering(Petri Nets) -
+            data link layer(四)（MAC） -
         
         GGbond&#39; blog
     </title>
@@ -207,7 +203,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Software Engineering(Petri Nets)</h1>
+                <h1 class="article-title-regular">data link layer(四)（MAC）</h1>
             
             </div>
             
@@ -229,15 +225,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-09-27 15:02:43</span>
-        <span class="mobile">2023-09-27 15:02:43</span>
+        <span class="desktop">2023-10-07 09:22:28</span>
+        <span class="mobile">2023-10-07 09:22:28</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-08 17:53:54</span>
-            <span class="mobile">2023-10-08 17:53:54</span>
+            <span class="desktop">2023-10-07 11:54:02</span>
+            <span class="mobile">2023-10-07 11:54:02</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -249,7 +245,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Software-Engineering/">Software Engineering</a>&nbsp;
+                        <a href="/tags/Computer-Networks/">Computer Networks</a>&nbsp;
                     </li>
                 
             </ul>
@@ -272,31 +268,75 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="INtro"><a href="#INtro" class="headerlink" title="INtro"></a>INtro</h2><p>Def：Graphical（visual communication aid） and Mathematical modeling（state equations, algebraic equations, etc） tools<br><br></p>
-<p>类型：并发、异步、分布式、并行、不确定和&#x2F;或随机系统<br><br><br><br>结构：place、transition和弧（arc）组成。弧从一个place运行到一个transition<br><br><br>特点：</p>
+            <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>MAC（Medium Access Control）属于Data link layer，接近于physical layer<br></p>
 <ul>
-<li>Petri网的图形表示是一个二部图</li>
-<li>有两种节点：Places（通常建立资源或系统的部分状态的模型） 和Transitions（为状态转换和同步建模）</li>
-<li>有向图 而且总是连接不同的节点</li>
-</ul>
-例子：<img src=' '>
-
-
-<p><br><br><br>状态：一个place可以有多个但有限的令牌（token），标记在地方上的任何分布将代表网的一个配置。<br><br><br></p>
-<h2 id="FIre"><a href="#FIre" class="headerlink" title="FIre"></a>FIre</h2><p>Def：对于每个便签的输入库索都有至少一个token，所以这个便签是enable<br><br>一个enable的transition可以激发（fire）并且导致new marking（即系统的状态发生变化）<br><br>便签的激发是不可分操作<br><br>激发便签导致的结果：</p>
-<ul>
-<li>对输入库索减掉一个令牌</li>
-<li>对输出库索增加一个令牌</li>
+<li>Multiple access protocol</li>
+<li>A real system(LAN): Ethernet</li>
+<li>DLL SWitching（网桥和交换机）</li>
 </ul>
 
+
+
+
+<h2 id="广播网络的problem"><a href="#广播网络的problem" class="headerlink" title="广播网络的problem"></a>广播网络的problem</h2><p>Data communication的方式有三种：</p>
+<ul>
+<li>Unicast(一对一)</li>
+<li>Broadcast（一对everone 局域网用这个）</li>
+<li>Multicast（一对一组）</li>
+</ul>
+广播信道有时被称为多址信道或随机存取信道。<br>
+广播的问题：如何分配一个broadcast channel 到多个竞争的用户当中（因为这是一个共享的信道）<br>
+
+<h2 id="MAC协议"><a href="#MAC协议" class="headerlink" title="MAC协议"></a>MAC协议</h2><p>Def：determine who goes next on a multiaccess channel（belong to sublayer of the data link layer called the MAC(Medium Access Control) sublayer）（就是决定谁进入channel）<br><br></p>
+<p>There are two methods of allocating channels:</p>
+<ul>
+<li>Static allocation</li>
+<ul>
+<li>the channel is like a circuit – only one person is allowed to use it.
+</li>
+<li>unused bandwidth will be lost （wasted</li>
+</ul>
+<li>Dynamic allocation</li>
+<li>the channel is open, with some computers being able to access unused bandwidth from others.
+</li>
+<li>there is no dedicated bandwidth
+</li>
+</ul></ul>
+
+<h3 id="Static-allocation"><a href="#Static-allocation" class="headerlink" title="Static allocation"></a>Static allocation</h3><p>方法：FDM TDM<br><br>FMD什么情况下有效：当用户数量固定且少量的时候，并且每个用户都有沉重的(缓冲的)流量负载时<br><br>FDM的问题：<br></p>
+<ul>
+<li>后如果目前对通信感兴趣的用户少于N个，则部分频谱将被浪费。</li>
+<li>如果超过N个用户想要通信，其中一些用户将被拒绝许可</li>
+<li>即使用户的数量是N且恒定的，当一些用户处于静止状态时，其他人也不能使用他们的带宽，所以这只是浪费。</li>
+<li>对于突发数据流量(峰值流量指流量比为1000:1)，分配的小子通道大部分时间是空闲的，无法处理峰值流量。</li>
+</ul>
 <br>
-对于有权重的输入库索，需要令牌大于权重才可以<br>
-输出库索增加的令牌数也由权重决定<br>
 
-<h2 id="Fire的特点以及一些概念"><a href="#Fire的特点以及一些概念" class="headerlink" title="Fire的特点以及一些概念"></a>Fire的特点以及一些概念</h2><p>UNdetermined：执行是非确定性的，多个转化流程可以同时激发，他们激发不激发是非确定性的，可以激发，但什么时候激发是不确定的<br><br></p>
-<p>Concurrency（并发性）：独立输入允许“并发”触发转换（多个输入并没有重叠的输出）<br><br><br><br>Conflict：有重叠的输入使转换发生冲突(转换了这个就没办法那个)<br><br><br>Mutual Exclusion:就是简而言之，通过共同的部分让他们能一起同步<br>Example:<img src=' '><br><br><br><br>Producers and Consumers: 一个生产一个用<br><br><br>Bounded Buffers:有界缓冲区,有个缓冲区域，是在生产消费的基础上加入占据区域和空闲槽，占据区域是消费者用的，空闲槽<br>例子：<img src=' '></p>
-<p><br><br><br>Liveness and Deadlock:死锁是永远不能在激发，永远不会死锁是liveness<br><br><br>时间Petri网，限定在某个时间单内激发，即使一个变迁处于使能状态，它也必须经过tmin之后才能被点燃，且必须在tmax之前<br><br><br><br>分叉和汇合:就是一个父产生多个子，多个父合成一个子 分叉和合并</p>
-<h2 id="Petri-net"><a href="#Petri-net" class="headerlink" title="Petri net"></a>Petri net</h2><p>组成：C &#x3D; &lt;P,T,I,O&gt; <br><br>P是places 的有限集，T是transition的有限集，I是输入方程，P是输出方程<br></p>
+
+
+<h3 id="Dynamic-Channel-Allocation"><a href="#Dynamic-Channel-Allocation" class="headerlink" title="Dynamic Channel Allocation"></a>Dynamic Channel Allocation</h3><p>五个假设：</p>
+<ul>
+<li>Station Model </li>
+<li>Single Channel Assumption</li>
+<li>Collision Assumption</li>
+<li>Continuous/Slotted Time(连续/开槽时间)</li>
+<li>Carrier/No Carrier Sense</li>
+</ul>
+
+
+<h4 id="Station-Model"><a href="#Station-Model" class="headerlink" title="Station Model"></a>Station Model</h4><p>模型由N个独立台站组成(也称为终端)。<br><br>每个站生成传输帧。<br><br>一旦生成了一个帧，该站就被阻塞，在帧成功传输之前什么也不做</p>
+<h4 id="Single-channel-Assumption"><a href="#Single-channel-Assumption" class="headerlink" title="Single channel Assumption"></a>Single channel Assumption</h4><p>核心内容<br><br>一个单信道对所有communication开放<br><br>就硬件而言，所有工作站都是等效的。<br><br>但是协议软件可以给不同的电台分配优先级。</p>
+<h4 id="Collision-Assumption"><a href="#Collision-Assumption" class="headerlink" title="Collision Assumption"></a>Collision Assumption</h4><p>如果两个帧同时传输，它们将“碰撞”-&gt;在碰撞中，两个帧都完全丢失。-&gt;发生碰撞的帧必须稍后重新传输<br><br>所有台站都能探测到碰撞。除了碰撞之外没有其他错误。</p>
+<h4 id="Continuous-Slotted-Time"><a href="#Continuous-Slotted-Time" class="headerlink" title="Continuous&#x2F;Slotted Time"></a>Continuous&#x2F;Slotted Time</h4><p>Continuous time:时间被视为一个连续体。时间不是被分割成离散的时间间隔。帧传输可以在任何时刻开始。<br><br><br>Slotted Time：时间被分成离散的间隔(时隙)。帧传输总是从一个时隙的开始处开始。一个槽可以包含0、1或更多帧。分别对应于空闲的时间槽、一次成功发送，或者一次冲突。<br></p>
+<h4 id="Carrier-No-Carrier-Sense"><a href="#Carrier-No-Carrier-Sense" class="headerlink" title="Carrier&#x2F;No Carrier Sense"></a>Carrier&#x2F;No Carrier Sense</h4><p>载波侦昕或不昕（ Carrier Sense or no carrier sense ）。有了载波侦昕的假设，一个站<br>在试图用信道之前就能知道该信道当前是否正被使用。如果信道侦昕结果是忙，则没有一<br>个站会再去试图使用该信道。如果没有载波侦昕，站就无法在使用信道之前侦昕信道，它<br>们只能盲目地传输，以后再判断这次传输是否成功</p>
+<h2 id="Multiple-access-protocol"><a href="#Multiple-access-protocol" class="headerlink" title="Multiple access protocol"></a>Multiple access protocol</h2><p>Random Access Protocol（随机访问协议）:<br><br>特点：使用渠道竞争，可能导致碰撞<br><br>典型随机存取协议：ALOHA，CSMA和CSMA&#x2F;CD<br></p>
+<br>
+受控访问协议（Controlled Access）：
+<br>特点：是分配信道，没有碰撞
+
+<h3 id="ALOHA-Protocol"><a href="#ALOHA-Protocol" class="headerlink" title="ALOHA Protocol"></a>ALOHA Protocol</h3><p>Two version： Pure ALOHA 和Slotted ALOHA<br></p>
+<p>basic idea：<br><br>想发就发，发送方总是可以通过监听信道输出来发现它的帧是否被销毁，如果帧被销毁，发送方只是随机等待一段时间（必须得随机的时间），然后再发送一次<br><br>可以随时发送数据，如果同时有2个以上的台站发送数据，碰撞是不可避免的</p>
+<h4 id="Pure-ALOHA的数学描述"><a href="#Pure-ALOHA的数学描述" class="headerlink" title="Pure ALOHA的数学描述"></a>Pure ALOHA的数学描述</h4><p>ALOHA 信道的效率</p>
 
         </div>
 
@@ -304,16 +344,16 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Software Engineering(Petri Nets)</li>
+        <li><strong>Title:</strong> data link layer(四)（MAC）</li>
         <li><strong>Author:</strong> 杨小鹤</li>
-        <li><strong>Created at:</strong> 2023-09-27 15:02:43</li>
+        <li><strong>Created at:</strong> 2023-10-07 09:22:28</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-10-08 17:53:54
+                <strong>Updated at:</strong> 2023-10-07 11:54:02
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2023/09/27/sw5/
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/10/07/CN7/
         </li>
         <li>
             <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
@@ -328,7 +368,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/Software-Engineering/">#Software Engineering</a>&nbsp;
+                        <a href="/tags/Computer-Networks/">#Computer Networks</a>&nbsp;
                     </li>
                 
             </ul>
@@ -339,29 +379,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/10/07/CN6/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">data link layer(三)(DLL)</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/09/27/sw4/"
+                        href="/2023/10/07/CN6/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Software Engineering(Software process)</span>
+                                <span class="post-nav-title-item">data link layer(三)(DLL)</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -426,8 +451,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Software Engineering(Petri Nets)</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#INtro"><span class="nav-text">INtro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIre"><span class="nav-text">FIre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fire%E7%9A%84%E7%89%B9%E7%82%B9%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="nav-text">Fire的特点以及一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Petri-net"><span class="nav-text">Petri net</span></a></li></ol>
+        <div class="page-title">data link layer(四)（MAC）</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BF%E6%92%AD%E7%BD%91%E7%BB%9C%E7%9A%84problem"><span class="nav-text">广播网络的problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC%E5%8D%8F%E8%AE%AE"><span class="nav-text">MAC协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Static-allocation"><span class="nav-text">Static allocation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dynamic-Channel-Allocation"><span class="nav-text">Dynamic Channel Allocation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiple-access-protocol"><span class="nav-text">Multiple access protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ALOHA-Protocol"><span class="nav-text">ALOHA Protocol</span></a></li></ol></li></ol>
 
     </div>
 </div>
