@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://example.com/2023/09/27/sw5/index.html">
 <meta property="og:image" content="http://example.com/2023/09/27/sw5/index.html">
 <meta property="article:published_time" content="2023-09-27T07:02:43.530Z">
-<meta property="article:modified_time" content="2023-10-08T09:53:54.935Z">
+<meta property="article:modified_time" content="2023-10-11T06:26:58.837Z">
 <meta property="article:author" content="Yang Xiaohe">
 <meta property="article:tag" content="Software Engineering">
 <meta name="twitter:card" content="summary">
@@ -236,8 +236,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-08 17:53:54</span>
-            <span class="mobile">2023-10-08 17:53:54</span>
+            <span class="desktop">2023-10-11 14:26:58</span>
+            <span class="mobile">2023-10-11 14:26:58</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -296,7 +296,40 @@
 <h2 id="Fire的特点以及一些概念"><a href="#Fire的特点以及一些概念" class="headerlink" title="Fire的特点以及一些概念"></a>Fire的特点以及一些概念</h2><p>UNdetermined：执行是非确定性的，多个转化流程可以同时激发，他们激发不激发是非确定性的，可以激发，但什么时候激发是不确定的<br><br></p>
 <p>Concurrency（并发性）：独立输入允许“并发”触发转换（多个输入并没有重叠的输出）<br><br><br><br>Conflict：有重叠的输入使转换发生冲突(转换了这个就没办法那个)<br><br><br>Mutual Exclusion:就是简而言之，通过共同的部分让他们能一起同步<br>Example:<img src=' '><br><br><br><br>Producers and Consumers: 一个生产一个用<br><br><br>Bounded Buffers:有界缓冲区,有个缓冲区域，是在生产消费的基础上加入占据区域和空闲槽，占据区域是消费者用的，空闲槽<br>例子：<img src=' '></p>
 <p><br><br><br>Liveness and Deadlock:死锁是永远不能在激发，永远不会死锁是liveness<br><br><br>时间Petri网，限定在某个时间单内激发，即使一个变迁处于使能状态，它也必须经过tmin之后才能被点燃，且必须在tmax之前<br><br><br><br>分叉和汇合:就是一个父产生多个子，多个父合成一个子 分叉和合并</p>
-<h2 id="Petri-net"><a href="#Petri-net" class="headerlink" title="Petri net"></a>Petri net</h2><p>组成：C &#x3D; &lt;P,T,I,O&gt; <br><br>P是places 的有限集，T是transition的有限集，I是输入方程，P是输出方程<br></p>
+<h2 id="Petri-net"><a href="#Petri-net" class="headerlink" title="Petri net"></a>Petri net</h2><p>组成：C &#x3D; &lt;P,T,I,O&gt; <br><br>P是places 的有限集，T是transition的有限集，I是输入方程，P是输出方程<br><br>相关的模型：FSN （Finite state nets）跟编译原理那个有点像，每个状态是根据令牌激发来确定的<br><br>某些pn可以转换成FSN，记住是某些</p>
+<h2 id="实现Petri-net"><a href="#实现Petri-net" class="headerlink" title="实现Petri net"></a>实现Petri net</h2><p>用centralized or decentralized fashion实现：</p>
+<ul>
+<li>Centralized(一个单独的“网络管理器”监视网络的当前状态，并触发启用的转换。)</li>
+<li>Decentralized(转换是流程，位置是共享资源，转换竞争获取令牌。)</li>
+</ul>
+
+<p>实际应用：<br>令牌可以扮演以下角色:</p>
+<ul>
+<li>一个物理对象,例如一个产品,一个部分,一种药物,一个人;</li>
+<li>一个信息对象,例如一个消息,一个信号,一个报告;</li>
+<li>一个对象集合,例如一辆卡车的产品,仓库部分,或一个地址文件;</li>
+<li>状态的指标,例如国家的指标中,一个过程,或一个对象的状态;</li>
+<li>一个指标的条件:令牌的存在表明是否满足一定的条件。</li>
+</ul>
+
+<p>place可以扮演：</p>
+<ul>
+<li>通讯媒介:一种通讯媒介，如电话线、中间人或通讯网络;</li>
+<li>缓冲区:例如，仓库、队列或邮筒</li>
+<li>地理位置:地理位置，如仓库、办公室或医院的位置;</li>
+<li>一种可能的状态或状态条件:例如，电梯所在的楼层，或者有专家在场的情况。</li>
+</ul>
+
+<p>转化可以扮演：</p>
+<ul>
+<li>事件:例如，开始手术、病人死亡、季节变化或交通灯由红变绿;</li>
+<li>对象的转换，如调整产品、更新数据库或更新文档;</li>
+<li>物体的运输:例如，运输货物或发送文件</li>
+</ul>
+
+
+
+
 
         </div>
 
@@ -309,7 +342,7 @@
         <li><strong>Created at:</strong> 2023-09-27 15:02:43</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-10-08 17:53:54
+                <strong>Updated at:</strong> 2023-10-11 14:26:58
             </li>
         
         <li>
@@ -427,7 +460,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Software Engineering(Petri Nets)</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#INtro"><span class="nav-text">INtro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIre"><span class="nav-text">FIre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fire%E7%9A%84%E7%89%B9%E7%82%B9%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="nav-text">Fire的特点以及一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Petri-net"><span class="nav-text">Petri net</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#INtro"><span class="nav-text">INtro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIre"><span class="nav-text">FIre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fire%E7%9A%84%E7%89%B9%E7%82%B9%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="nav-text">Fire的特点以及一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Petri-net"><span class="nav-text">Petri net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Petri-net"><span class="nav-text">实现Petri net</span></a></li></ol>
 
     </div>
 </div>
