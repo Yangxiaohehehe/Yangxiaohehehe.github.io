@@ -13,20 +13,25 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/tags/巴以冲突/"/>
+    <link rel="canonical" href="http://example.com/2023/11/10/rails/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="一个简单的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨小鹤">
-<meta property="og:url" content="http://example.com/tags/%E5%B7%B4%E4%BB%A5%E5%86%B2%E7%AA%81/index.html">
+        <meta name="description" content="InstallEnvironment: Windows11 Step:  download ruby from official website.(and the gem) download rails by using order ‘ gem install rails’　　during the process, it may report ‘can’t access to website’.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rails">
+<meta property="og:url" content="http://example.com/2023/11/10/rails/index.html">
 <meta property="og:site_name" content="杨小鹤">
-<meta property="og:description" content="一个简单的博客">
+<meta property="og:description" content="InstallEnvironment: Windows11 Step:  download ruby from official website.(and the gem) download rails by using order ‘ gem install rails’　　during the process, it may report ‘can’t access to website’.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/11/10/rails/db">
+<meta property="article:published_time" content="2023-11-10T05:55:49.566Z">
+<meta property="article:modified_time" content="2023-11-10T16:14:40.867Z">
 <meta property="article:author" content="Yang Xiaohe">
+<meta property="article:tag" content="Software Engineering">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/11/10/rails/db">
     
     
     <!--- Icon Part-->
@@ -38,7 +43,7 @@
     
     <title>
         
-            Tag: 巴以冲突 -
+            rails -
         
         GGbond&#39; blog
     </title>
@@ -195,41 +200,243 @@
             <div class="main-content">
 
                 
-                    <div class="tag-container">
-	<div class="tag-name">
-		<i class="fa-solid fa-tag"></i>&nbsp;巴以冲突
-	</div>
-	<div class="tag-post-list">
-		
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[1]</span>
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">rails</h1>
+            
             </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='10-29'>
-                <a href="/2023/10/29/%E9%9A%8F%E7%AC%94/">
-                  <span class="article-title">巴以冲突</span>
-                </a>
-              </li>
-              
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/yongquanzhu.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">杨小鹤</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-10 13:55:49</span>
+        <span class="mobile">2023-11-10 13:55:49</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-11-11 00:14:40</span>
+            <span class="mobile">2023-11-11 00:14:40</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Software-Engineering/">Software Engineering</a>&nbsp;
+                    </li>
+                
             </ul>
-        </section>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
-	</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>Environment: Windows11</p>
+<p>Step:</p>
+<ol>
+<li>download ruby from official website.(and the gem)</li>
+<li>download rails by using order ‘ gem install rails’<br>　　during the process, it may report ‘can’t access to website’. If meeting this, we can replace sources.<br>Note: I find it says that we need sqlite3. I dont downlown it. but I find I had downloaded it ever. And the same as Git.</li>
+</ol>
+<h2 id="Generate-“hello-word”"><a href="#Generate-“hello-word”" class="headerlink" title="Generate “hello word”"></a>Generate “hello word”</h2><p>1.Command:’rails new name’<br>　　then it will creat some files.<br>2.Command ‘rails server’<br>　　then it will give you a web address.<br>3.Command ‘rails generate controller welcome index’<br>　　it means that I want a controller named “welcome” and an action named “index”.<br>4. Find ‘app&#x2F;views&#x2F;welcome&#x2F;index.html.erb ‘file ,and delete the whole codes and write ‘<h1>hello  word</hi>‘<br>5. Fine “ config&#x2F;routes.rb “ file, write  ‘root ‘welcome#index’<br>　　it will change this page as a root page.</p>
+<h2 id="creat-database"><a href="#creat-database" class="headerlink" title="creat database"></a>creat database</h2><p>Steps:</p>
+<ol>
+<li>order: rails g scaffold name var_1:type var_2:type</li>
+note: use singular name
+
+<p>Content of generating:</p>
+<ol>
+<li>It will create routers</li>
+<li>It will create operations like edit, show, new and so on.</li>
+<li>It will create db, in which you can see the variable and their type</li>
+</ol>
+<li>rails db:migrate</li> 
+(to make it live)
+</ol>
+
+<h2 id="Change-style"><a href="#Change-style" class="headerlink" title="Change style"></a>Change style</h2><p>By using bootstrap, we find the elements of table. And then copy the code to name’index and change the code about db. Then ok.<br>There I wanna to introduce each files’ function:<br><img src='db'><br>index: is basic page<br>show:<br>new: generate new element<br>edit:<br>friend:show some varible we have and their type<br>form:the style of blocks(files that have blocks can use form to render)</p>
+<h2 id="Problem-I-meet"><a href="#Problem-I-meet" class="headerlink" title="Problem I meet"></a>Problem I meet</h2><p>1.<br>Problem: When generating a page, it will report error that Rails Errno::EACCES Permission Denied.<br>How to solve: just delete the file ‘tem’.</p>
+<p>2.<br>Problem: When generating a db by using ‘rails g scaffold’, it report ActiveRecord::PendingMigrationError.<br>How to solve: The reason is that the data table content is empty, so the data cannot be accessed.</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> rails</li>
+        <li><strong>Author:</strong> 杨小鹤</li>
+        <li><strong>Created at:</strong> 2023-11-10 13:55:49</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-11-11 00:14:40
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/11/10/rails/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
 </div>
 
-<div class="tag-paginator">
-	<div class="paginator">
-    <span class="page-number current">1</span>
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Software-Engineering/">#Software Engineering</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/11/07/os11/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">File Manage</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
 </div>
 
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">rails</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-%E2%80%9Chello-word%E2%80%9D"><span class="nav-text">Generate “hello word”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">hello  word‘5. Fine “ config&#x2F;routes.rb “ file, write  ‘root ‘welcome#index’　　it will change this page as a root page.
+creat databaseSteps:
+
+order: rails g scaffold name var_1:type var_2:type
+note: use singular name
+
+Content of generating:
+
+It will create routers
+It will create operations like edit, show, new and so on.
+It will create db, in which you can see the variable and their type
+
+rails db:migrate 
+(to make it live)
+
+
+Change styleBy using bootstrap, we find the elements of table. And then copy the code to name’index and change the code about db. Then ok.There I wanna to introduce each files’ function:index: is basic pageshow:new: generate new elementedit:friend:show some varible we have and their typeform:the style of blocks(files that have blocks can use form to render)
+Problem I meet1.Problem: When generating a page, it will report error that Rails Errno::EACCES Permission Denied.How to solve: just delete the file ‘tem’.
+2.Problem: When generating a db by using ‘rails g scaffold’, it report ActiveRecord::PendingMigrationError.How to solve: The reason is that the data table content is empty, so the data cannot be accessed.
+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#creat-database"><span class="nav-text">creat database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-style"><span class="nav-text">Change style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-I-meet"><span class="nav-text">Problem I meet</span></a></li></ol>
+
+    </div>
 </div>
+        </div>
+    
+</div>
+
 
 
                 
@@ -302,6 +509,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
