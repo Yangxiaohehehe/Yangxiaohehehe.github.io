@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="杨小鹤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/11/16/ruby/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="下载下官网，连着gem一起下ruby -vgem -v检测版本 使用输出hello world在cmd中输入ruby 就可以开始ruby的命令puts “Hello World”再加Ctrl Z 就可以输出 交互式Ruby（IRB）在cmd中输入irb就可以输入一行输出一行 数据类型整形浮点型　算术操作：+-&#x2F; 质数为*字符串类型：8位字节序列数组哈希类型反胃类型 字符串1.双引号标记的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ruby">
+<meta property="og:url" content="http://example.com/2023/11/16/ruby/index.html">
+<meta property="og:site_name" content="杨小鹤">
+<meta property="og:description" content="下载下官网，连着gem一起下ruby -vgem -v检测版本 使用输出hello world在cmd中输入ruby 就可以开始ruby的命令puts “Hello World”再加Ctrl Z 就可以输出 交互式Ruby（IRB）在cmd中输入irb就可以输入一行输出一行 数据类型整形浮点型　算术操作：+-&#x2F; 质数为*字符串类型：8位字节序列数组哈希类型反胃类型 字符串1.双引号标记的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-16T09:43:04.969Z">
+<meta property="article:modified_time" content="2023-11-17T03:11:38.873Z">
+<meta property="article:author" content="Yang Xiaohe">
+<meta property="article:tag" content="Software Engineering">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/zhuzhuxia.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/zhuzhuxia.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/zhuzhuxia.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            ruby -
+        
+        GGbond&#39; blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/hai.jpg","dark":"/images/mao.jpg"},"title":"Yangxiaohe","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.3.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    Global.data_config = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+    
+
+    
+
+    <div class="main-content-container">
+        
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                GGbond&#39; blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">ruby</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/yongquanzhu.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">杨小鹤</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-16 17:43:04</span>
+        <span class="mobile">2023-11-16 17:43:04</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-11-17 11:11:38</span>
+            <span class="mobile">2023-11-17 11:11:38</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Software-Engineering/">Software Engineering</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下官网，连着gem一起下<br>ruby -v<br>gem -v<br>检测版本</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="输出hello-world"><a href="#输出hello-world" class="headerlink" title="输出hello world"></a>输出hello world</h3><p>在cmd中输入ruby 就可以开始ruby的命令<br>puts “Hello World”<br>再加Ctrl Z 就可以输出</p>
+<h3 id="交互式Ruby（IRB）"><a href="#交互式Ruby（IRB）" class="headerlink" title="交互式Ruby（IRB）"></a>交互式Ruby（IRB）</h3><p>在cmd中输入irb就可以输入一行输出一行</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>整形<br>浮点型<br>　算术操作：+-<em>&#x2F; 质数为</em>*<br>字符串类型：8位字节序列<br>数组<br>哈希类型<br>反胃类型</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>1.双引号标记的字符串允许替换和使用反斜线符号，单引号标记的字符串不允许替换，且只允许使用 \ 和 &#39; 两个反斜线符号。</p>
+<p>2.使用序列 #{ expr } 替换任意 Ruby 表达式的值为一个字符串。在这里，expr 可以是任意的 Ruby 表达式<br>eg：puts “相乘 : #{24<em>60</em>60}”;</p>
+<p>3.反斜线符号：\n 换行 \r回车 \f换页 \b退格 \e转义 \s 空格 \x 字符x</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组字面量通过[]中以逗号分隔定义，且支持range定义<br>与其他语言的不通电：</p>
+<ol>
+<li>一个数组类型可以不一样<br>eg：ary &#x3D; [ “fred”, 10, 3.14, “This is a string”, “last element”, ]：</li>
+</ol>
+<p>2.通过赋值操作插入、删除、替换元素</p>
+<p>3.通过+，－号进行合并和删除元素，且集合做为新集合出现</p>
+<p>4.通过&lt;&lt;号向原数据追加元素</p>
+<p>5.通过*号重复数组元素</p>
+<p>6.通过｜和&amp;符号做并集和交集操作（注意顺序）</p>
+<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><p> 哈希是在大括号内放置一系列键&#x2F;值对，键和值之间使用逗号和序列 &#x3D;&gt; 分隔。尾部的逗号会被忽略<br>1.可以通过 new 类方法创建一个空的哈希(可以使用 new 创建带有默认值的哈希)<br>months &#x3D; Hash.new “month”</p>
+<p>2.可以使用任何的 Ruby 对象作为键或值，甚至可以使用数组<br>[1,”jan”] &#x3D;&gt; “January”</p>
+<p>例子：<br>months &#x3D; Hash.new( “month” )<br>months &#x3D; {“1” &#x3D;&gt; “January”, “2” &#x3D;&gt; “February”}<br>keys &#x3D; months.keys<br>puts “#{keys}”</p>
+<h3 id="范围类型"><a href="#范围类型" class="headerlink" title="范围类型"></a>范围类型</h3><p>一个范围表示一个区间<br>比如（1..5）包含值1,2,3,4,5<br>（1…5）包含值1,2,3,4</p>
+<h2 id="Ruby类"><a href="#Ruby类" class="headerlink" title="Ruby类"></a>Ruby类</h2><p>特点：数据封装，数据抽象，多态，继承</p>
+<p>例子：<br>class Customer<br>   @@no_of_customers&#x3D;0<br>   def initialize(id, name, addr)<br>      @cust_id&#x3D;id<br>      @cust_name&#x3D;name<br>      @cust_addr&#x3D;addr<br>   end<br>   def display_details()<br>      puts “Customer id #@cust_id”<br>      puts “Customer name #@cust_name”<br>      puts “Customer address #@cust_addr”<br>    end<br>    def total_no_of_customers()<br>       @@no_of_customers +&#x3D; 1<br>       puts “Total number of customers: #@@no_of_customers”<br>    end<br>end</p>
+<h3 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h3><p>局部变量：局部变量是在方法中定义的变量。局部变量在方法外是不可用的。在后续的章节中，您将看到有关方法的更多细节。局部变量以小写字母或 _ 开始。</p>
+<p>实例变量：实例变量可以跨任何特定的实例或对象中的方法使用。这意味着，实例变量可以从对象到对象的改变。实例变量在变量名之前放置符号（@）。</p>
+<p>类变量：类变量可以跨不同的对象使用。类变量属于类，且是类的一个属性。类变量在变量名之前放置符号（@@）。</p>
+<p>全局变量：类变量不能跨类使用。如果您想要有一个可以跨类使用的变量，您需要定义全局变量。全局变量总是以美元符号（$）开始。</p>
+<h3 id="创建对象："><a href="#创建对象：" class="headerlink" title="创建对象："></a>创建对象：</h3><p>使用 类名 .new</p>
+<h3 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h3><p>def 开头 end结尾</p>
+<p>调用方法：对象.function</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>有五种变量</p>
+<p>一般小写字母、下划线开头：变量（Variable）。</p>
+<p>$开头：全局变量（Global variable）。</p>
+<p>@开头：实例变量（Instance variable）。</p>
+<p>@@开头：类变量（Class variable）类变量被共享在整个继承链中</p>
+<p>大写字母开头：常数</p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>and<br>or<br>&amp;&amp;<br>||<br>！<br>not</p>
+<p>三元运算符：？：同C++</p>
+<p>Defined运算符：以方法调用的形式来判断传递的表达式是否已定义。它返回表达式的描述字符串，如果表达式未定义则返回 nil。</p>
+<p>Ruby 点运算符 “.” 和双冒号运算符 “::”<br>可以使用类或模块名称和两个冒号 :: 来引用类或模块中的常量。</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行：#<br>多行：<br>&#x3D;begin<br>&#x3D;end</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h3><h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><p>if<br>elsif<br>else<br>end</p>
+<p>或者是if修饰符：<br>code if condition</p>
+<h4 id="Unless"><a href="#Unless" class="headerlink" title="Unless"></a>Unless</h4><p>unless语句：<br>unless<br>else<br>end</p>
+<p>unless修饰符<br>code unless conditional</p>
+<h4 id="case"><a href="#case" class="headerlink" title="case"></a>case</h4><p>case expr0<br>when expr1, expr2<br>   stmt1<br>when expr3, expr4<br>   stmt2<br>else<br>   stmt3<br>end</p>
+<p>例子：<br>$age &#x3D;  5<br>case $age<br>when 0 .. 2<br>    puts “婴儿”<br>when 3 .. 6<br>    puts “小孩”<br>when 7 .. 12<br>    puts “child”<br>when 13 .. 18<br>    puts “少年”<br>else<br>    puts “其他年龄段的”<br>end</p>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><h4 id="while"><a href="#while" class="headerlink" title="while"></a>while</h4><p>while conditional [do]<br>   code<br>end</p>
+<p>while修饰：<br>code while condition<br>或者<br>begin<br>  code<br>end while conditional</p>
+<h4 id="Until"><a href="#Until" class="headerlink" title="Until"></a>Until</h4><p>until conditional [do]<br>   code<br>end</p>
+<p>修饰：总之就是吧while换成until</p>
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><p>for variable [, variable …] in expression [do]<br>   code<br>end</p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>break next<br>redo（重新开始最内部循环的该次迭代，不检查循环条件。如果在块内调用，则重新开始 yield 或 call。）<br>retry（如果 retry 出现在 begin 表达式的 rescue 子句中，则从 begin 主体的开头重新开始）</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>定义：<br>def method_name (var1&#x3D;value1, var2&#x3D;value2)<br>   expr..<br>　  return i,j,k<br>end</p>
+<p>参数形式如果是*test就说明参数的个数可以可变</p>
+<p>使用：<br>正常方法：method_name 25, 30<br>类方法：类名.name</p>
+<p>注意：能省略括号就省略</p>
+<h3 id="块"><a href="#块" class="headerlink" title="块"></a>块</h3><p>特点：<br>1.块由大量的代码组成。</p>
+<p>2.您需要给块取个名称。</p>
+<p>3.块中的代码总是包含在大括号 {} 内。</p>
+<p>4.块总是从与其具有相同名称的函数调用。这意味着如果您的块名称为 test，那么您要使用函数 test 来调用这个块。</p>
+<p>5.您可以使用 yield 语句来调用块。</p>
+<p>格式：<br>def test<br>   yield 5<br>   puts “在 test 方法内”<br>   yield 100<br>end<br>test {|i| puts “你在块 #{i} 内”}</p>
+<p>但是如果方法的最后一个参数前带有 &amp;，那么您可以向该方法传递一个块，且这个块可被赋给最后一个参数。如果 * 和 &amp; 同时出现在参数列表中，&amp; 应放在后面。</p>
+<h4 id="Begin-End"><a href="#Begin-End" class="headerlink" title="Begin End"></a>Begin End</h4><p>每个 Ruby 源文件可以声明当文件被加载时要运行的代码块（BEGIN 块），以及程序完成执行后要运行的代码块（END 块）。<br>例子：<br>BEGIN { </p>
+<h1 id="BEGIN-代码块"><a href="#BEGIN-代码块" class="headerlink" title="BEGIN 代码块"></a>BEGIN 代码块</h1><p>  puts “BEGIN 代码块”<br>} </p>
+<p>END { </p>
+<h1 id="END-代码块"><a href="#END-代码块" class="headerlink" title="END 代码块"></a>END 代码块</h1><p>  puts “END 代码块”<br>}</p>
+<h1 id="MAIN-代码块"><a href="#MAIN-代码块" class="headerlink" title="MAIN 代码块"></a>MAIN 代码块</h1><p>puts “MAIN 代码块”</p>
+<h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><p>定义：<br>模块（Module）定义了一个命名空间，相当于一个沙盒，在里边您的方法和常量不会与其他地方的方法常量冲突。</p>
+<p>模块类似与类，但有以下不同：</p>
+<p>模块不能实例化<br>模块没有子类<br>模块只能被另一个模块定义</p>
+<p>模块常量命名与类常量命名类似，以大写字母开头。方法定义看起来也相似：模块方法定义与类方法定义类似。</p>
+<p>引用：您可以在类方法名称前面放置模块名称和一个点号来调用模块方法，您可以使用模块名称和两个冒号来引用一个常量。</p>
+<p>例子:</p>
+<p>module Trig<br>   PI &#x3D; 3.141592654<br>   def Trig.sin(x)</p>
+<h1 id=""><a href="#" class="headerlink" title=".."></a>..</h1><p>   end<br>   def Trig.cos(x)</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title=".."></a>..</h1><p>   end<br>end</p>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><h4 id="each"><a href="#each" class="headerlink" title="each"></a>each</h4><p>each 迭代器返回数组或哈希的所有元素。</p>
+<p>例子：<br>ary &#x3D; [1,2,3,4,5]<br>ary.each do |i|<br>   puts i<br>end</p>
+<h4 id="collect-迭代器"><a href="#collect-迭代器" class="headerlink" title="collect 迭代器"></a>collect 迭代器</h4><p>collect 迭代器返回集合的所有元素。</p>
+<p>a &#x3D; [1,2,3,4,5]<br>b &#x3D; Array.new<br>b &#x3D; a.collect{ |x|x }<br>puts b</p>
+<p>a &#x3D; [1,2,3,4,5]<br>b &#x3D; a.collect{|x| 10*x}<br>puts b</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> ruby</li>
+        <li><strong>Author:</strong> 杨小鹤</li>
+        <li><strong>Created at:</strong> 2023-11-16 17:43:04</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-11-17 11:11:38
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/11/16/ruby/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Software-Engineering/">#Software Engineering</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/17/sw12/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">test</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/11/15/sw11/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">RSpec</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">ruby</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BAhello-world"><span class="nav-text">输出hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8FRuby%EF%BC%88IRB%EF%BC%89"><span class="nav-text">交互式Ruby（IRB）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C"><span class="nav-text">哈希</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4%E7%B1%BB%E5%9E%8B"><span class="nav-text">范围类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ruby%E7%B1%BB"><span class="nav-text">Ruby类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="nav-text">变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="nav-text">创建对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-text">成员函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6"><span class="nav-text">条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-text">循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%97"><span class="nav-text">块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BEGIN-%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">BEGIN 代码块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#END-%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">END 代码块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MAIN-%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">MAIN 代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Module"><span class="nav-text">Module</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">..</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-1"><span class="nav-text">..</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text">迭代器</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">杨小鹤</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+        ],
+        containers: ["#swup"],
+    });
+
+    swup.on("pageView", () => {
+        Global.refresh();
+    });
+
+    // if (document.readyState === "complete") {
+    //
+    // } else {
+    //     document.addEventListener("DOMContentLoaded", () => init());
+    // }
+</script>
+
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+<script src="/js/layouts/categoryList.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+</body>
+</html>

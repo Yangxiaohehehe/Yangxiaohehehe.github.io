@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2023/11/10/rails/db">
 <meta property="article:published_time" content="2023-11-10T05:55:49.566Z">
-<meta property="article:modified_time" content="2023-11-10T16:14:40.867Z">
+<meta property="article:modified_time" content="2023-12-06T10:55:19.878Z">
 <meta property="article:author" content="Yang Xiaohe">
 <meta property="article:tag" content="Software Engineering">
 <meta name="twitter:card" content="summary">
@@ -234,8 +234,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-11 00:14:40</span>
-            <span class="mobile">2023-11-11 00:14:40</span>
+            <span class="desktop">2023-12-06 18:55:19</span>
+            <span class="mobile">2023-12-06 18:55:19</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -277,6 +277,7 @@
 <li>download rails by using order ‘ gem install rails’<br>　　during the process, it may report ‘can’t access to website’. If meeting this, we can replace sources.<br>Note: I find it says that we need sqlite3. I dont downlown it. but I find I had downloaded it ever. And the same as Git.</li>
 </ol>
 <h2 id="Generate-“hello-word”"><a href="#Generate-“hello-word”" class="headerlink" title="Generate “hello word”"></a>Generate “hello word”</h2><p>1.Command:’rails new name’<br>　　then it will creat some files.<br>2.Command ‘rails server’<br>　　then it will give you a web address.<br>3.Command ‘rails generate controller welcome index’<br>　　it means that I want a controller named “welcome” and an action named “index”.<br>4. Find ‘app&#x2F;views&#x2F;welcome&#x2F;index.html.erb ‘file ,and delete the whole codes and write ‘<h1>hello  word</hi>‘<br>5. Fine “ config&#x2F;routes.rb “ file, write  ‘root ‘welcome#index’<br>　　it will change this page as a root page.</p>
+<h3 id="添加一个新页面"><a href="#添加一个新页面" class="headerlink" title="添加一个新页面"></a>添加一个新页面</h3><p>在view里面添加一个name.html.erb文件<br>在controller里面添加method定义，要对应的路径中<br>在routers中添加get ‘home&#x2F;about’这样</p>
 <h2 id="creat-database"><a href="#creat-database" class="headerlink" title="creat database"></a>creat database</h2><p>Steps:</p>
 <ol>
 <li>order: rails g scaffold name var_1:type var_2:type</li>
@@ -288,13 +289,29 @@ note: use singular name
 <li>It will create operations like edit, show, new and so on.</li>
 <li>It will create db, in which you can see the variable and their type</li>
 </ol>
-<li>rails db:migrate</li> 
+<li>rake db:migrate</li> 
 (to make it live)
 </ol>
+如果想继续添加属性，可以rails g migration add_想加的_to_names 相加的：属性
+
 
 <h2 id="Change-style"><a href="#Change-style" class="headerlink" title="Change style"></a>Change style</h2><p>By using bootstrap, we find the elements of table. And then copy the code to name’index and change the code about db. Then ok.<br>There I wanna to introduce each files’ function:<br><img src='db'><br>index: is basic page<br>show:<br>new: generate new element<br>edit:<br>friend:show some varible we have and their type<br>form:the style of blocks(files that have blocks can use form to render)</p>
+<h3 id="How-to-download-bootstrap"><a href="#How-to-download-bootstrap" class="headerlink" title="How to download bootstrap"></a>How to download bootstrap</h3><p>method 1：创建文件的时候 -c 例如 rails new -c bootstrap app1</p>
+<p>method 2：正常new以后，加入gem<br>1.输入命令bundle add cssbundling-rails jsbundling-rails<br>2.bin&#x2F;rails css:install:bootstrap<br>3.bin&#x2F;rails javascript:install:esbuild</p>
+<h2 id="创立连接"><a href="#创立连接" class="headerlink" title="创立连接"></a>创立连接</h2><p>&lt;%&#x3D; link_to “My Blog”, posts_path %&gt;</p>
+<h2 id="利用devise"><a href="#利用devise" class="headerlink" title="利用devise"></a>利用devise</h2><p>1.首先先在gemfile中gem ‘devise’ 然后bundle install<br>2.rails generate devise:install<br>3.根据上一条命令的提示，去“config&#x2F;environments&#x2F;development.rb”中添加“config.action_mailer.default_url_options &#x3D; { host: ‘localhost’, port: 3000 }”<br>4.设置homepage和alert<br>5.rails g devise:views<br>6.rails generate devise MODEL 产生模型（MODEL是name）<br>7.rails db:migrate<br>8.rails g devise:controllers name<br>这样就已经可以了，但是如果要在导航界面加对应的就得用if语句。<br>&lt;% if user_signed_in? %&gt;<br>&lt;% else %&gt;<br>&lt;% end %&gt;</p>
+<h3 id="devise-添加属性"><a href="#devise-添加属性" class="headerlink" title="devise 添加属性"></a>devise 添加属性</h3><p>先在视图里面照猫画虎添加div lab什么的，分别在session edit和new里面添加<br>在controller里面的registeration里面找到configure_account_update_params<br>把中括号里面的属性改成自己希望的<br>同时使用befor_action:configure_account_updata_param函数<br>还有sign_up的两个也是同上操作<br>在routes里面改<br>　　sessions:’doctors&#x2F;sessions’,<br>　　registrations: ‘doctors&#x2F;registrations’<br>然后添加migration，rails generate migration add_username_to_users username:string<br>rails db:migrate</p>
+<h2 id="下载administrator"><a href="#下载administrator" class="headerlink" title="下载administrator"></a>下载administrator</h2><p>bundle add administrate<br>rails g administrate:install<br>rails g administrate:dashboard name<br>然后再resource里面添加</p>
+<p>通过更改routes里面的可以改变我们的访问的<br>rails g administrator:install –namespace&#x3D;doctor</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>中添加的<br>before_action :authenticate_name!, only: [:names], unless: :admin_signed_in?</p>
 <h2 id="Problem-I-meet"><a href="#Problem-I-meet" class="headerlink" title="Problem I meet"></a>Problem I meet</h2><p>1.<br>Problem: When generating a page, it will report error that Rails Errno::EACCES Permission Denied.<br>How to solve: just delete the file ‘tem’.</p>
 <p>2.<br>Problem: When generating a db by using ‘rails g scaffold’, it report ActiveRecord::PendingMigrationError.<br>How to solve: The reason is that the data table content is empty, so the data cannot be accessed.</p>
+<ol start="3">
+<li>Problem:when using sign out, it return “No route matches [GET] “&#x2F;users&#x2F;sign_out””</li>
+</ol>
+<p>How to solve:</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devise_scope :user do</span><br><span class="line">  get &#x27;/users/sign_out&#x27; =&gt; &#x27;devise/sessions#destroy&#x27;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
+<p>add it into routes.rb</p>
 
         </div>
 
@@ -307,7 +324,7 @@ note: use singular name
         <li><strong>Created at:</strong> 2023-11-10 13:55:49</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-11-11 00:14:40
+                <strong>Updated at:</strong> 2023-12-06 18:55:19
             </li>
         
         <li>
@@ -336,6 +353,21 @@ note: use singular name
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/11/%E6%95%B0%E5%AD%A6/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数学建模</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -411,6 +443,7 @@ note: use singular name
         <div class="toc-title">On this page</div>
         <div class="page-title">rails</div>
         <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-%E2%80%9Chello-word%E2%80%9D"><span class="nav-text">Generate “hello word”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">hello  word‘5. Fine “ config&#x2F;routes.rb “ file, write  ‘root ‘welcome#index’　　it will change this page as a root page.
+添加一个新页面在view里面添加一个name.html.erb文件在controller里面添加method定义，要对应的路径中在routers中添加get ‘home&#x2F;about’这样
 creat databaseSteps:
 
 order: rails g scaffold name var_1:type var_2:type
@@ -422,14 +455,30 @@ It will create routers
 It will create operations like edit, show, new and so on.
 It will create db, in which you can see the variable and their type
 
-rails db:migrate 
+rake db:migrate 
 (to make it live)
+
+如果想继续添加属性，可以rails g migration add_想加的_to_names 相加的：属性
 
 
 Change styleBy using bootstrap, we find the elements of table. And then copy the code to name’index and change the code about db. Then ok.There I wanna to introduce each files’ function:index: is basic pageshow:new: generate new elementedit:friend:show some varible we have and their typeform:the style of blocks(files that have blocks can use form to render)
+How to download bootstrapmethod 1：创建文件的时候 -c 例如 rails new -c bootstrap app1
+method 2：正常new以后，加入gem1.输入命令bundle add cssbundling-rails jsbundling-rails2.bin&#x2F;rails css:install:bootstrap3.bin&#x2F;rails javascript:install:esbuild
+创立连接&lt;%&#x3D; link_to “My Blog”, posts_path %&gt;
+利用devise1.首先先在gemfile中gem ‘devise’ 然后bundle install2.rails generate devise:install3.根据上一条命令的提示，去“config&#x2F;environments&#x2F;development.rb”中添加“config.action_mailer.default_url_options &#x3D; { host: ‘localhost’, port: 3000 }”4.设置homepage和alert5.rails g devise:views6.rails generate devise MODEL 产生模型（MODEL是name）7.rails db:migrate8.rails g devise:controllers name这样就已经可以了，但是如果要在导航界面加对应的就得用if语句。&lt;% if user_signed_in? %&gt;&lt;% else %&gt;&lt;% end %&gt;
+devise 添加属性先在视图里面照猫画虎添加div lab什么的，分别在session edit和new里面添加在controller里面的registeration里面找到configure_account_update_params把中括号里面的属性改成自己希望的同时使用befor_action:configure_account_updata_param函数还有sign_up的两个也是同上操作在routes里面改　　sessions:’doctors&#x2F;sessions’,　　registrations: ‘doctors&#x2F;registrations’然后添加migration，rails generate migration add_username_to_users username:stringrails db:migrate
+下载administratorbundle add administraterails g administrate:installrails g administrate:dashboard name然后再resource里面添加
+通过更改routes里面的可以改变我们的访问的rails g administrator:install –namespace&#x3D;doctor
+Controller中添加的before_action :authenticate_name!, only: [:names], unless: :admin_signed_in?
 Problem I meet1.Problem: When generating a page, it will report error that Rails Errno::EACCES Permission Denied.How to solve: just delete the file ‘tem’.
 2.Problem: When generating a db by using ‘rails g scaffold’, it report ActiveRecord::PendingMigrationError.How to solve: The reason is that the data table content is empty, so the data cannot be accessed.
-</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#creat-database"><span class="nav-text">creat database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-style"><span class="nav-text">Change style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-I-meet"><span class="nav-text">Problem I meet</span></a></li></ol>
+
+Problem:when using sign out, it return “No route matches [GET] “&#x2F;users&#x2F;sign_out””
+
+How to solve:
+123devise_scope :user do  get &#39;&#x2F;users&#x2F;sign_out&#39; &#x3D;&gt; &#39;devise&#x2F;sessions#destroy&#39;end
+add it into routes.rb
+</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B5%E9%9D%A2"><span class="nav-text">添加一个新页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#creat-database"><span class="nav-text">creat database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-style"><span class="nav-text">Change style</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-download-bootstrap"><span class="nav-text">How to download bootstrap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E7%AB%8B%E8%BF%9E%E6%8E%A5"><span class="nav-text">创立连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8devise"><span class="nav-text">利用devise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#devise-%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7"><span class="nav-text">devise 添加属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDadministrator"><span class="nav-text">下载administrator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-I-meet"><span class="nav-text">Problem I meet</span></a></li></ol>
 
     </div>
 </div>
