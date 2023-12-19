@@ -13,19 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/tags/computer-networks/page/2/"/>
+    <link rel="canonical" href="http://example.com/2023/12/13/cn复习/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="一个简单的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨小鹤">
-<meta property="og:url" content="http://example.com/tags/Computer-Networks/page/2/index.html">
+        <meta name="description" content="因特网：使用范围最广的局域网 flooding algorithm:(泛洪)Every incoming frame for an unknown destination is output on all the LANs to which the bridge is connected except the one it arrived on.  backward learning （逆向学习）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="review">
+<meta property="og:url" content="http://example.com/2023/12/13/cn%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="杨小鹤">
-<meta property="og:description" content="一个简单的博客">
+<meta property="og:description" content="因特网：使用范围最广的局域网 flooding algorithm:(泛洪)Every incoming frame for an unknown destination is output on all the LANs to which the bridge is connected except the one it arrived on.  backward learning （逆向学习）">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-13T11:10:43.773Z">
+<meta property="article:modified_time" content="2023-12-18T14:45:17.597Z">
 <meta property="article:author" content="Yang Xiaohe">
+<meta property="article:tag" content="Computer Networks">
 <meta name="twitter:card" content="summary">
     
     
@@ -38,7 +41,7 @@
     
     <title>
         
-            Tag: Computer Networks -
+            review -
         
         GGbond&#39; blog
     </title>
@@ -195,53 +198,207 @@
             <div class="main-content">
 
                 
-                    <div class="tag-container">
-	<div class="tag-name">
-		<i class="fa-solid fa-tag"></i>&nbsp;Computer Networks
-	</div>
-	<div class="tag-post-list">
-		
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[3]</span>
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">review</h1>
+            
             </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='09-04'>
-                <a href="/2023/09/04/CN3/">
-                  <span class="article-title">The Physical Layer</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='08-31'>
-                <a href="/2023/08/31/CN2/">
-                  <span class="article-title">Architecture</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='08-28'>
-                <a href="/2023/08/28/CN1/">
-                  <span class="article-title">Computer Networs (Intro)</span>
-                </a>
-              </li>
-              
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/yongquanzhu.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">杨小鹤</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-12-13 19:10:43</span>
+        <span class="mobile">2023-12-13 19:10:43</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-12-18 22:45:17</span>
+            <span class="mobile">2023-12-18 22:45:17</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Computer-Networks/">Computer Networks</a>&nbsp;
+                    </li>
+                
             </ul>
-        </section>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
-	</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>因特网：使用范围最广的局域网</p>
+<p>flooding algorithm:(泛洪)<br>Every incoming frame for an unknown destination is output on all the LANs to which the bridge is connected except the one it arrived on. </p>
+<p>backward learning （逆向学习）<br>By looking at the incoming frame’s source address, a bridge is able to know which machine is accessible on which LAN, so it make an entry in its hash table linking the source machine with the incoming LAN. </p>
+<p>dij算法：初始时，S只包含起点vs；U包含除vs外的其他顶点，且U中顶点的距离为”起点vs到该顶点的距离”[例如，U中顶点v的距离为(vs,v)的长度，然后vs和v不相邻，则v的距离为∞]。</p>
+<p>(2) 从U中选出”距离最短的顶点k”，并将顶点k加入到S中；同时，从U中移除顶点k。</p>
+<p>(3) 更新U中各个顶点到起点vs的距离。之所以更新U中顶点的距离，是由于上一步中确定了k是求出最短路径的顶点，从而可以利用k来更新其它顶点的距离；例如，(vs,v)的距离可能大于(vs,k)+(k,v)的距离。</p>
+<p>(4) 重复步骤(2)和(3)，直到遍历完所有顶点。</p>
+<p>泛红算法：一直都是前向不回头</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> review</li>
+        <li><strong>Author:</strong> 杨小鹤</li>
+        <li><strong>Created at:</strong> 2023-12-13 19:10:43</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-12-18 22:45:17
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/12/13/cn复习/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
 </div>
 
-<div class="tag-paginator">
-	<div class="paginator">
-    <a class="extend prev" rel="prev" href="/tags/Computer-Networks/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/tags/Computer-Networks/">1</a><span class="page-number current">2</span>
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Computer-Networks/">#Computer Networks</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/12/11/cv5/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">第三次作业</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
 </div>
 
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">review</div>
+        
+
+    </div>
 </div>
+        </div>
+    
+</div>
+
 
 
                 
@@ -314,6 +471,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
