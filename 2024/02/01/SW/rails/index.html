@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="杨小鹤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/02/01/sw/rails/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="InstallEnvironment: Windows11 Step:  download ruby from official website.(and the gem) download rails by using order ‘ gem install rails’　　during the process, it may report ‘can’t access to website’.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rails">
+<meta property="og:url" content="http://example.com/2024/02/01/SW/rails/index.html">
+<meta property="og:site_name" content="杨小鹤">
+<meta property="og:description" content="InstallEnvironment: Windows11 Step:  download ruby from official website.(and the gem) download rails by using order ‘ gem install rails’　　during the process, it may report ‘can’t access to website’.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/02/01/SW/rails/db">
+<meta property="article:published_time" content="2024-02-01T06:26:08.475Z">
+<meta property="article:modified_time" content="2023-12-06T10:55:19.878Z">
+<meta property="article:author" content="Yang Xiaohe">
+<meta property="article:tag" content="Software Engineering">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/02/01/SW/rails/db">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/zhuzhuxia.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/zhuzhuxia.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/zhuzhuxia.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            rails -
+        
+        GGbond&#39; blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/hai.jpg","dark":"/images/mao.jpg"},"title":"Yangxiaohe","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.3.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    Global.data_config = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+    
+
+    
+
+    <div class="main-content-container">
+        
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                GGbond&#39; blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">rails</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/yongquanzhu.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">杨小鹤</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-02-01 14:26:08</span>
+        <span class="mobile">2024-02-01 14:26:08</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-12-06 18:55:19</span>
+            <span class="mobile">2023-12-06 18:55:19</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Software-Engineering/">Software Engineering</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>Environment: Windows11</p>
+<p>Step:</p>
+<ol>
+<li>download ruby from official website.(and the gem)</li>
+<li>download rails by using order ‘ gem install rails’<br>　　during the process, it may report ‘can’t access to website’. If meeting this, we can replace sources.<br>Note: I find it says that we need sqlite3. I dont downlown it. but I find I had downloaded it ever. And the same as Git.</li>
+</ol>
+<h2 id="Generate-“hello-word”"><a href="#Generate-“hello-word”" class="headerlink" title="Generate “hello word”"></a>Generate “hello word”</h2><p>1.Command:’rails new name’<br>　　then it will creat some files.<br>2.Command ‘rails server’<br>　　then it will give you a web address.<br>3.Command ‘rails generate controller welcome index’<br>　　it means that I want a controller named “welcome” and an action named “index”.<br>4. Find ‘app&#x2F;views&#x2F;welcome&#x2F;index.html.erb ‘file ,and delete the whole codes and write ‘<h1>hello  word</hi>‘<br>5. Fine “ config&#x2F;routes.rb “ file, write  ‘root ‘welcome#index’<br>　　it will change this page as a root page.</p>
+<h3 id="添加一个新页面"><a href="#添加一个新页面" class="headerlink" title="添加一个新页面"></a>添加一个新页面</h3><p>在view里面添加一个name.html.erb文件<br>在controller里面添加method定义，要对应的路径中<br>在routers中添加get ‘home&#x2F;about’这样</p>
+<h2 id="creat-database"><a href="#creat-database" class="headerlink" title="creat database"></a>creat database</h2><p>Steps:</p>
+<ol>
+<li>order: rails g scaffold name var_1:type var_2:type</li>
+note: use singular name
+
+<p>Content of generating:</p>
+<ol>
+<li>It will create routers</li>
+<li>It will create operations like edit, show, new and so on.</li>
+<li>It will create db, in which you can see the variable and their type</li>
+</ol>
+<li>rake db:migrate</li> 
+(to make it live)
+</ol>
+如果想继续添加属性，可以rails g migration add_想加的_to_names 相加的：属性
+
+
+<h2 id="Change-style"><a href="#Change-style" class="headerlink" title="Change style"></a>Change style</h2><p>By using bootstrap, we find the elements of table. And then copy the code to name’index and change the code about db. Then ok.<br>There I wanna to introduce each files’ function:<br><img src='db'><br>index: is basic page<br>show:<br>new: generate new element<br>edit:<br>friend:show some varible we have and their type<br>form:the style of blocks(files that have blocks can use form to render)</p>
+<h3 id="How-to-download-bootstrap"><a href="#How-to-download-bootstrap" class="headerlink" title="How to download bootstrap"></a>How to download bootstrap</h3><p>method 1：创建文件的时候 -c 例如 rails new -c bootstrap app1</p>
+<p>method 2：正常new以后，加入gem<br>1.输入命令bundle add cssbundling-rails jsbundling-rails<br>2.bin&#x2F;rails css:install:bootstrap<br>3.bin&#x2F;rails javascript:install:esbuild</p>
+<h2 id="创立连接"><a href="#创立连接" class="headerlink" title="创立连接"></a>创立连接</h2><p>&lt;%&#x3D; link_to “My Blog”, posts_path %&gt;</p>
+<h2 id="利用devise"><a href="#利用devise" class="headerlink" title="利用devise"></a>利用devise</h2><p>1.首先先在gemfile中gem ‘devise’ 然后bundle install<br>2.rails generate devise:install<br>3.根据上一条命令的提示，去“config&#x2F;environments&#x2F;development.rb”中添加“config.action_mailer.default_url_options &#x3D; { host: ‘localhost’, port: 3000 }”<br>4.设置homepage和alert<br>5.rails g devise:views<br>6.rails generate devise MODEL 产生模型（MODEL是name）<br>7.rails db:migrate<br>8.rails g devise:controllers name<br>这样就已经可以了，但是如果要在导航界面加对应的就得用if语句。<br>&lt;% if user_signed_in? %&gt;<br>&lt;% else %&gt;<br>&lt;% end %&gt;</p>
+<h3 id="devise-添加属性"><a href="#devise-添加属性" class="headerlink" title="devise 添加属性"></a>devise 添加属性</h3><p>先在视图里面照猫画虎添加div lab什么的，分别在session edit和new里面添加<br>在controller里面的registeration里面找到configure_account_update_params<br>把中括号里面的属性改成自己希望的<br>同时使用befor_action:configure_account_updata_param函数<br>还有sign_up的两个也是同上操作<br>在routes里面改<br>　　sessions:’doctors&#x2F;sessions’,<br>　　registrations: ‘doctors&#x2F;registrations’<br>然后添加migration，rails generate migration add_username_to_users username:string<br>rails db:migrate</p>
+<h2 id="下载administrator"><a href="#下载administrator" class="headerlink" title="下载administrator"></a>下载administrator</h2><p>bundle add administrate<br>rails g administrate:install<br>rails g administrate:dashboard name<br>然后再resource里面添加</p>
+<p>通过更改routes里面的可以改变我们的访问的<br>rails g administrator:install –namespace&#x3D;doctor</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>中添加的<br>before_action :authenticate_name!, only: [:names], unless: :admin_signed_in?</p>
+<h2 id="Problem-I-meet"><a href="#Problem-I-meet" class="headerlink" title="Problem I meet"></a>Problem I meet</h2><p>1.<br>Problem: When generating a page, it will report error that Rails Errno::EACCES Permission Denied.<br>How to solve: just delete the file ‘tem’.</p>
+<p>2.<br>Problem: When generating a db by using ‘rails g scaffold’, it report ActiveRecord::PendingMigrationError.<br>How to solve: The reason is that the data table content is empty, so the data cannot be accessed.</p>
+<ol start="3">
+<li>Problem:when using sign out, it return “No route matches [GET] “&#x2F;users&#x2F;sign_out””</li>
+</ol>
+<p>How to solve:</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devise_scope :user do</span><br><span class="line">  get &#x27;/users/sign_out&#x27; =&gt; &#x27;devise/sessions#destroy&#x27;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
+<p>add it into routes.rb</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> rails</li>
+        <li><strong>Author:</strong> 杨小鹤</li>
+        <li><strong>Created at:</strong> 2024-02-01 14:26:08</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-12-06 18:55:19
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/02/01/SW/rails/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Software-Engineering/">#Software Engineering</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/02/01/SW/ruby/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">ruby</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/02/01/CN/cn%E5%A4%8D%E4%B9%A0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">review</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">rails</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-%E2%80%9Chello-word%E2%80%9D"><span class="nav-text">Generate “hello word”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">hello  word‘5. Fine “ config&#x2F;routes.rb “ file, write  ‘root ‘welcome#index’　　it will change this page as a root page.
+添加一个新页面在view里面添加一个name.html.erb文件在controller里面添加method定义，要对应的路径中在routers中添加get ‘home&#x2F;about’这样
+creat databaseSteps:
+
+order: rails g scaffold name var_1:type var_2:type
+note: use singular name
+
+Content of generating:
+
+It will create routers
+It will create operations like edit, show, new and so on.
+It will create db, in which you can see the variable and their type
+
+rake db:migrate 
+(to make it live)
+
+如果想继续添加属性，可以rails g migration add_想加的_to_names 相加的：属性
+
+
+Change styleBy using bootstrap, we find the elements of table. And then copy the code to name’index and change the code about db. Then ok.There I wanna to introduce each files’ function:index: is basic pageshow:new: generate new elementedit:friend:show some varible we have and their typeform:the style of blocks(files that have blocks can use form to render)
+How to download bootstrapmethod 1：创建文件的时候 -c 例如 rails new -c bootstrap app1
+method 2：正常new以后，加入gem1.输入命令bundle add cssbundling-rails jsbundling-rails2.bin&#x2F;rails css:install:bootstrap3.bin&#x2F;rails javascript:install:esbuild
+创立连接&lt;%&#x3D; link_to “My Blog”, posts_path %&gt;
+利用devise1.首先先在gemfile中gem ‘devise’ 然后bundle install2.rails generate devise:install3.根据上一条命令的提示，去“config&#x2F;environments&#x2F;development.rb”中添加“config.action_mailer.default_url_options &#x3D; { host: ‘localhost’, port: 3000 }”4.设置homepage和alert5.rails g devise:views6.rails generate devise MODEL 产生模型（MODEL是name）7.rails db:migrate8.rails g devise:controllers name这样就已经可以了，但是如果要在导航界面加对应的就得用if语句。&lt;% if user_signed_in? %&gt;&lt;% else %&gt;&lt;% end %&gt;
+devise 添加属性先在视图里面照猫画虎添加div lab什么的，分别在session edit和new里面添加在controller里面的registeration里面找到configure_account_update_params把中括号里面的属性改成自己希望的同时使用befor_action:configure_account_updata_param函数还有sign_up的两个也是同上操作在routes里面改　　sessions:’doctors&#x2F;sessions’,　　registrations: ‘doctors&#x2F;registrations’然后添加migration，rails generate migration add_username_to_users username:stringrails db:migrate
+下载administratorbundle add administraterails g administrate:installrails g administrate:dashboard name然后再resource里面添加
+通过更改routes里面的可以改变我们的访问的rails g administrator:install –namespace&#x3D;doctor
+Controller中添加的before_action :authenticate_name!, only: [:names], unless: :admin_signed_in?
+Problem I meet1.Problem: When generating a page, it will report error that Rails Errno::EACCES Permission Denied.How to solve: just delete the file ‘tem’.
+2.Problem: When generating a db by using ‘rails g scaffold’, it report ActiveRecord::PendingMigrationError.How to solve: The reason is that the data table content is empty, so the data cannot be accessed.
+
+Problem:when using sign out, it return “No route matches [GET] “&#x2F;users&#x2F;sign_out””
+
+How to solve:
+123devise_scope :user do  get &#39;&#x2F;users&#x2F;sign_out&#39; &#x3D;&gt; &#39;devise&#x2F;sessions#destroy&#39;end
+add it into routes.rb
+</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B5%E9%9D%A2"><span class="nav-text">添加一个新页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#creat-database"><span class="nav-text">creat database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-style"><span class="nav-text">Change style</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-download-bootstrap"><span class="nav-text">How to download bootstrap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E7%AB%8B%E8%BF%9E%E6%8E%A5"><span class="nav-text">创立连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8devise"><span class="nav-text">利用devise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#devise-%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7"><span class="nav-text">devise 添加属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDadministrator"><span class="nav-text">下载administrator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-I-meet"><span class="nav-text">Problem I meet</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">杨小鹤</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+        ],
+        containers: ["#swup"],
+    });
+
+    swup.on("pageView", () => {
+        Global.refresh();
+    });
+
+    // if (document.readyState === "complete") {
+    //
+    // } else {
+    //     document.addEventListener("DOMContentLoaded", () => init());
+    // }
+</script>
+
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+<script src="/js/layouts/categoryList.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+</body>
+</html>

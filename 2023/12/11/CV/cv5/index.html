@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="杨小鹤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/12/11/cv/cv5/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Sutherland-Hodgman算法：算法过程：有交点加交点。末端点在窗口内，加入到队列中。 算法缺点：对于裁减凹多边形，会导致显示出一条多余的直线。对于裁减窗口是凹，会导致原来在里面的被裁剪掉 四连通和八连通：四连通区域：所谓四连通区域或四邻域，是指对应像素位置的上、下、左、右，是紧邻的位置。共4个方向，所以称之为四连通区域，又叫四邻域 八连通区域：八连通区域或八邻域，是指对应位置的上、下、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三次作业">
+<meta property="og:url" content="http://example.com/2023/12/11/CV/cv5/index.html">
+<meta property="og:site_name" content="杨小鹤">
+<meta property="og:description" content="Sutherland-Hodgman算法：算法过程：有交点加交点。末端点在窗口内，加入到队列中。 算法缺点：对于裁减凹多边形，会导致显示出一条多余的直线。对于裁减窗口是凹，会导致原来在里面的被裁剪掉 四连通和八连通：四连通区域：所谓四连通区域或四邻域，是指对应像素位置的上、下、左、右，是紧邻的位置。共4个方向，所以称之为四连通区域，又叫四邻域 八连通区域：八连通区域或八邻域，是指对应位置的上、下、">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-11T00:52:27.559Z">
+<meta property="article:modified_time" content="2023-12-11T00:55:22.807Z">
+<meta property="article:author" content="Yang Xiaohe">
+<meta property="article:tag" content="计算机视觉">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/zhuzhuxia.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/zhuzhuxia.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/zhuzhuxia.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            第三次作业 -
+        
+        GGbond&#39; blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/hai.jpg","dark":"/images/mao.jpg"},"title":"Yangxiaohe","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.3.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    Global.data_config = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+    
+
+    
+
+    <div class="main-content-container">
+        
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                GGbond&#39; blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">第三次作业</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/yongquanzhu.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">杨小鹤</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-12-11 08:52:27</span>
+        <span class="mobile">2023-12-11 08:52:27</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-12-11 08:55:22</span>
+            <span class="mobile">2023-12-11 08:55:22</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Sutherland-Hodgman算法："><a href="#Sutherland-Hodgman算法：" class="headerlink" title="Sutherland-Hodgman算法："></a>Sutherland-Hodgman算法：</h2><h3 id="算法过程："><a href="#算法过程：" class="headerlink" title="算法过程："></a>算法过程：</h3><p>有交点加交点。<br>末端点在窗口内，加入到队列中。</p>
+<p>算法缺点：对于裁减凹多边形，会导致显示出一条多余的直线。对于裁减窗口是凹，会导致原来在里面的被裁剪掉</p>
+<h2 id="四连通和八连通："><a href="#四连通和八连通：" class="headerlink" title="四连通和八连通："></a>四连通和八连通：</h2><p>四连通区域：所谓四连通区域或四邻域，是指对应像素位置的上、下、左、右，是紧邻的位置。共4个方向，所以称之为四连通区域，又叫四邻域</p>
+<p>八连通区域：八连通区域或八邻域，是指对应位置的上、下、左、右、左上、右上、左下、右下，是紧邻的位置和斜向相邻的位置。共8个方向，所以称之为8连通区域或八邻域。</p>
+<p>性质：对每一个值为1的点若其八连通有一个点的值也为1,那么这两个点就归为一个物体。<br>从8连通的定义公式可以看到，其为N4四连通并上右下、右上、左下、左上四点，即四连通是八连通的子集。也就是说在图像处理中四连通的区域，一定是八连通。<br>四连通区域的边界是八连通区域<br>八连通区域的边界是四连通区域</p>
+<h3 id="种子填充算法"><a href="#种子填充算法" class="headerlink" title="种子填充算法"></a>种子填充算法</h3><p>可以生成迷宫等</p>
+<h2 id="多边形扫描转换："><a href="#多边形扫描转换：" class="headerlink" title="多边形扫描转换："></a>多边形扫描转换：</h2><p>定义：对于一个给定的多边形，用一组水平(垂直)的扫描线进行扫描，对每一条扫描线均可求出与多边形边的交点，这些交点将扫描线分割成落在多边形内部的线段和落在多边形外部的线段；并且二者相间排列。于是，将落在多边形内部的线段上的所有象素点赋以给定的色彩值。算法中不需要检验每一个象素点，而只考虑与多边形边相交的交点分割后的扫描线段。</p>
+<p>步骤：<br>1）求交点：首先求出扫描线与多边形各边的交点；<br>2）交点排序：将这些交点按X坐标递增顺序排序；<br>3）交点匹配：即从左到右确定落在多边形内部的那些线段；<br>4）区间填充：填充落在多边形内部的线段。</p>
+<p>如何求交点：<br>最简单的办法：将多边形的所有边放在一个表中，在处理每条扫描线时，从表中顺序取出所有的边，分别求这些边与扫描线的交点。<br>不使用该方法的原因：将做一些无益的求交点动作，因为扫描线并不一定与多边形的边相交，扫描线只与部分甚至较少的边相交；因此，在进行扫描线与多边形边求交点时， 应只求那些与扫描线相交的边的交点。<br>确定与扫描线相交的边：用边表来确定哪些边是下一条扫描线求交计算时应该加入运算的。</p>
+<h3 id="边表："><a href="#边表：" class="headerlink" title="边表："></a>边表：</h3><p>ET的意义在于为扫描线提供待加入的新边信息。<br>结构：<br>每个结点结构如下：<br>struct EdgeS{<br>float ymax;   &#x2F;&#x2F;边的上端点的y坐标<br>float x;        &#x2F;&#x2F;边的下端点x坐标<br>float dx;      &#x2F;&#x2F;边的斜率的倒数<br>EdgeS *next;   &#x2F;&#x2F;指向下一条边<br>}</p>
+<p>Ymax：边的最大Y值；<br>dX：从当前扫描线到下一条扫描线之间的X增量（dX&#x2F; dY)；<br>X Ymin：边的下端点的X坐标；<br>next：指针，指向下一条边。<br>建立：<br>按下端点的y坐标分类<br>y&#x3D;i的边，归入第i类，注意在异侧的边y要加1<br>每类构成一个线性链表<br>水平边不做任何处理</p>
+<h3 id="活边表AET："><a href="#活边表AET：" class="headerlink" title="活边表AET："></a>活边表AET：</h3><p>把与当前扫描线相交的边称活化边AEL(Active Edge List) 。组成的表称为活性表AET，其数据域组成如下：<br>Ymax ：存放边的上端点Y坐标；<br>X         ： 边与当前扫描线交点的X坐标；<br>ΔX ，next指针 ：同边表。<br>扫描线步骤为：<br>(1)对于扫描线Y&#x3D;yc，若对应的ET中非空，则将其所有的边从ET 中取出并且插入到边的活化半表中，并对AET中各边按X递增排序；<br>(2)若相对于当前扫描线的活化边表AET非空，则将AET中的边两两依次配对，即第1，2边为一对，第3，4 边为一对，依次类推，每一对边与当前扫描线的交点所构成的区段位于多边形内，依次将这些区段上的点进行着色；<br>(3)将当前的扫描线的纵坐标Y累加1，即Y&#x3D;Y+1；<br>(4)将边的活化链表AET中满足Y&#x3D;ymax的边删去；<br>(5)将边的活化链表AET中剩下的每一条边的X域累加ΔX，即X&#x3D;X+ΔX；<br>重复执行(1)。<br>注意第一次加入不变化，最后一次pop也要变</p>
+<h2 id="Bresenham算法"><a href="#Bresenham算法" class="headerlink" title="Bresenham算法"></a>Bresenham算法</h2><p>定义：精确而有效的光栅线生成算法，可用于显示线、圆和其他曲线的整数增量运算。它是目前最有效的线段生成算法。</p>
+<p>特点：<br>当前像素一旦确定, 下一个点只能从2个中点选一<br>算法只涉及+，-，移位<br>用于绘图仪、 显卡等硬件实现</p>
+<p>就是根据公式 找下一个点是上面还是下面 ，通过距离判断</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 第三次作业</li>
+        <li><strong>Author:</strong> 杨小鹤</li>
+        <li><strong>Created at:</strong> 2023-12-11 08:52:27</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-12-11 08:55:22
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/12/11/CV/cv5/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">#计算机视觉</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/02/01/CN/CN1/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Computer Networs (Intro)</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/12/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E4%B8%AD/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">第三次作业</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sutherland-Hodgman%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="nav-text">Sutherland-Hodgman算法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-text">算法过程：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E8%BF%9E%E9%80%9A%E5%92%8C%E5%85%AB%E8%BF%9E%E9%80%9A%EF%BC%9A"><span class="nav-text">四连通和八连通：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%8D%E5%AD%90%E5%A1%AB%E5%85%85%E7%AE%97%E6%B3%95"><span class="nav-text">种子填充算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%BE%B9%E5%BD%A2%E6%89%AB%E6%8F%8F%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="nav-text">多边形扫描转换：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E8%A1%A8%EF%BC%9A"><span class="nav-text">边表：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%BB%E8%BE%B9%E8%A1%A8AET%EF%BC%9A"><span class="nav-text">活边表AET：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bresenham%E7%AE%97%E6%B3%95"><span class="nav-text">Bresenham算法</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">杨小鹤</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+        ],
+        containers: ["#swup"],
+    });
+
+    swup.on("pageView", () => {
+        Global.refresh();
+    });
+
+    // if (document.readyState === "complete") {
+    //
+    // } else {
+    //     document.addEventListener("DOMContentLoaded", () => init());
+    // }
+</script>
+
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+<script src="/js/layouts/categoryList.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+</body>
+</html>
