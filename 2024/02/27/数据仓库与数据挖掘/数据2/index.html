@@ -13,21 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2024/02/25/anaconda/"/>
+    <link rel="canonical" href="http://example.com/2024/02/27/数据仓库与数据挖掘/数据2/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Anaconda一些常用指令查看安装的包： conda list查看有哪些虚拟环境： conda env list创建虚拟环境： conda create -n name python&#x3D;x.x切换虚拟环境：activate name对虚拟环境中安装额外的包： conda install -n name[package]删除虚拟环境： conda remove -n name –all删除">
+        <meta name="description" content="数据预处理为什么清洗集成与变换约简离散化总结 ##为什么进行预处理数据质量是第一位的 预处理的目的1.有些数据是：不完整的、　收集数据时，在不同的阶段具有不同的考虑　人&#x2F;硬件&#x2F;软件的问题等有噪声的（包含错误或存在孤立点）、　收集阶段　数据传输阶段等（噪声：输错了 不同的数据库 不同的厂商）不一致的（在名称或代码之间存在着差异）　不同的数据源　功能依赖冲突2.为了提高计算效率 预">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Anaconda创建虚拟环境以及环境配置">
-<meta property="og:url" content="http://example.com/2024/02/25/anaconda/index.html">
+<meta property="og:title" content="数据预处理">
+<meta property="og:url" content="http://example.com/2024/02/27/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E6%95%B0%E6%8D%AE2/index.html">
 <meta property="og:site_name" content="杨小鹤">
-<meta property="og:description" content="Anaconda一些常用指令查看安装的包： conda list查看有哪些虚拟环境： conda env list创建虚拟环境： conda create -n name python&#x3D;x.x切换虚拟环境：activate name对虚拟环境中安装额外的包： conda install -n name[package]删除虚拟环境： conda remove -n name –all删除">
+<meta property="og:description" content="数据预处理为什么清洗集成与变换约简离散化总结 ##为什么进行预处理数据质量是第一位的 预处理的目的1.有些数据是：不完整的、　收集数据时，在不同的阶段具有不同的考虑　人&#x2F;硬件&#x2F;软件的问题等有噪声的（包含错误或存在孤立点）、　收集阶段　数据传输阶段等（噪声：输错了 不同的数据库 不同的厂商）不一致的（在名称或代码之间存在着差异）　不同的数据源　功能依赖冲突2.为了提高计算效率 预">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-25T01:26:07.808Z">
-<meta property="article:modified_time" content="2024-02-25T01:31:06.955Z">
+<meta property="article:published_time" content="2024-02-27T07:11:53.567Z">
+<meta property="article:modified_time" content="2024-03-09T01:50:27.617Z">
 <meta property="article:author" content="Yang Xiaohe">
+<meta property="article:tag" content="数据仓库与数据挖掘">
 <meta name="twitter:card" content="summary">
     
     
@@ -40,7 +41,7 @@
     
     <title>
         
-            Anaconda创建虚拟环境以及环境配置 -
+            数据预处理 -
         
         GGbond&#39; blog
     </title>
@@ -202,7 +203,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Anaconda创建虚拟环境以及环境配置</h1>
+                <h1 class="article-title-regular">数据预处理</h1>
             
             </div>
             
@@ -224,20 +225,31 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-02-25 09:26:07</span>
-        <span class="mobile">2024-02-25 09:26:07</span>
+        <span class="desktop">2024-02-27 15:11:53</span>
+        <span class="mobile">2024-02-27 15:11:53</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-02-25 09:31:06</span>
-            <span class="mobile">2024-02-25 09:31:06</span>
+            <span class="desktop">2024-03-09 09:50:27</span>
+            <span class="mobile">2024-03-09 09:50:27</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据仓库与数据挖掘</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -256,8 +268,36 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Anaconda一些常用指令"><a href="#Anaconda一些常用指令" class="headerlink" title="Anaconda一些常用指令"></a>Anaconda一些常用指令</h2><p>查看安装的包： conda list<br>查看有哪些虚拟环境： conda env list<br>创建虚拟环境： conda create -n name python&#x3D;x.x<br>切换虚拟环境：activate name<br>对虚拟环境中安装额外的包： conda install -n name[package]<br>删除虚拟环境： conda remove -n name –all<br>删除环境某个包： conda remove –name $env_name $package</p>
-<h2 id="配置pytorch"><a href="#配置pytorch" class="headerlink" title="配置pytorch"></a>配置pytorch</h2><p>直接进入官网选择合适版本就行</p>
+            <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><p>为什么<br>清洗<br>集成与变换<br>约简<br>离散化<br>总结</p>
+<p>##为什么进行预处理<br>数据质量是第一位的</p>
+<h3 id="预处理的目的"><a href="#预处理的目的" class="headerlink" title="预处理的目的"></a>预处理的目的</h3><p>1.有些数据是：<br>不完整的、<br>　收集数据时，在不同的阶段具有不同的考虑<br>　人&#x2F;硬件&#x2F;软件的问题等<br>有噪声的（包含错误或存在孤立点）、<br>　收集阶段<br>　数据传输阶段等（噪声：输错了 不同的数据库 不同的厂商）<br>不一致的（在名称或代码之间存在着差异）<br>　不同的数据源<br>　功能依赖冲突<br>2.为了提高计算效率</p>
+<h3 id="预处理的任务"><a href="#预处理的任务" class="headerlink" title="预处理的任务"></a>预处理的任务</h3><p>1.数据清洗<br>　填充遗失的数据, 平滑噪声数据, 辨识或删除孤立点, 解决不一致性问题<br>2.数据集成<br>　对多个数据库，数据立方或文件进行集成<br>3.数据变换<br>　规范化与聚集（Normalization and aggregation）<br>4.数据约简<br>　得到数据集的压缩表示，它小的多，但能够产生同样的（或几乎同样的）分析结果<br>5.数据离散化</p>
+<h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><p>数据清洗的任务：<br>1.填充遗失数据<br>2.辨识孤立点、平滑噪声数据<br>3.修正不一致性数据<br>4.解决数据集成时带来的数据冗余问题</p>
+<h3 id="处理遗失数据"><a href="#处理遗失数据" class="headerlink" title="处理遗失数据"></a>处理遗失数据</h3><p>方法1：忽略元组: 除非元组有多个属性缺少值，否则该方法不是很有效</p>
+<p>方法2：人工填充: 费时费力</p>
+<p>方法3：自动填充<br>　使用一个全局常量填充: 如, “unknown”, 会误认为是一个新的、有意义的类?! （不是很好 会搞出一个新的）<br>　该属性的平均值（也不是特别理想 容易被平均）<br>　使用与给定元组属同一类的所有样本的该属性的平均值<br>　使用最可能的值: 使用基于推导的方法，如Bayesian公式或决策树</p>
+<p>方法4：分享方法：<br>　先对数据进行排序，然后把它们划分到箱<br>　然后通过箱平均值，箱中值等进行平滑.</p>
+<p>方法5：聚类：探测并除去孤立点</p>
+<p>方法6：回归分析：让数据适合一个函数（如回归函数）来平滑数据</p>
+<h4 id="分箱"><a href="#分箱" class="headerlink" title="分箱"></a>分箱</h4><p>有两类分箱，分别是等宽划分（距离）和等深划分（频率）<br>1.等宽划分：根据属性值的范围划分成N等宽的区间<br>　　如果A和B 属性值的最大与最小值，则区间宽度为: W &#x3D; (B –A)&#x2F;N.<br>　　很直接，但孤立点将会对此方法有很大的影响</p>
+<p>2.等深划分：划分成N个区间，每个区间含有大约相等地样本数<br>　　具有较好的数据扩展性<br>问题：是怎么等深</p>
+<h2 id="数据集成与变换"><a href="#数据集成与变换" class="headerlink" title="数据集成与变换"></a>数据集成与变换</h2><p>　　基本定义：将多个数据源中的数据结合起来存放在一个一致的数据存储中(如数据仓库)。</p>
+<p>解决问题：</p>
+<ol>
+<li>实体识别问题：从不同的数据源辨识实体，如, A.cust-id º B.cust-<br>2.检测与解决值冲突问题：对客观世界的同一实体, 不同数据源可能具有不同的值（可能原因: 不同的表示方式, 不同的刻度）<br>3.数据冗余问题：冗余属性可以通过相关分析检测出来<br>不进行规划化的话取值小的会被取值大的研磨</li>
+</ol>
+<p>规范化方法：<br>1.最小-最大规范化<br>2.z-score规范化<br>3.小数定标规范化</p>
+<h2 id="数据约简"><a href="#数据约简" class="headerlink" title="数据约简"></a>数据约简</h2><p>　　为什么要数据约简：一个数据仓库存储着数以TB（terabytes）计甚至更大的数据，复杂的数据分析&#x2F;挖掘在这样大的数据上运行需要很长的时间</p>
+<p>　　数据约简的定义：获得原有数据的约简表示，它的规模小的多，但具有与原有规模的数据相同或近似的分析结果</p>
+<p>数据约简的方法：<br>1.降维<br>2.数据约简-参数化或非参数化方法<br>3.采样</p>
+<h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><p>属性的三种类型:<br>1.标称性的 — 取自于无序集合(unordered set)的值<br>2.有序的(Ordinal) —取自于有序集合(ordered set)的值<br>3.连续的 — 实数</p>
+<p>离散化目的：<br>1.把连续型属性的取值范围划分成多个小的区间<br>2.通过离散化减少数据集大小<br>3.为进一步分析做好准备</p>
+<p>离散化方法：<br>1.分箱<br>2.直方图分析<br>3.基于熵的离散化</p>
+<p>离散化 ：不离散的话 会对实数数据没有任何离散能力</p>
+<p>共同点：偏离正常 一个是错误的 一个是正常发生的</p>
+<p>聚类：可以是每一类的重心 离哪个重心最近 孤立点就替换</p>
+<p>聚类分情况使用：</p>
+<p>熵 初始是热量的，</p>
 
         </div>
 
@@ -265,16 +305,16 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Anaconda创建虚拟环境以及环境配置</li>
+        <li><strong>Title:</strong> 数据预处理</li>
         <li><strong>Author:</strong> 杨小鹤</li>
-        <li><strong>Created at:</strong> 2024-02-25 09:26:07</li>
+        <li><strong>Created at:</strong> 2024-02-27 15:11:53</li>
         
             <li>
-                <strong>Updated at:</strong> 2024-02-25 09:31:06
+                <strong>Updated at:</strong> 2024-03-09 09:50:27
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/02/25/anaconda/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/02/27/数据仓库与数据挖掘/数据2/
         </li>
         <li>
             <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
@@ -286,35 +326,28 @@
         
 
         
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">#数据仓库与数据挖掘</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
 
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/02/27/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/%E6%95%B0%E6%8D%AE2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">数据预处理</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2024/02/01/CV/cv5/"
+                        href="/2024/02/25/anaconda/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">第三次作业</span>
+                                <span class="post-nav-title-item">Anaconda创建虚拟环境以及环境配置</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -379,8 +412,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Anaconda创建虚拟环境以及环境配置</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-text">Anaconda一些常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEpytorch"><span class="nav-text">配置pytorch</span></a></li></ol>
+        <div class="page-title">数据预处理</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-text">预处理的目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="nav-text">预处理的任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="nav-text">数据清洗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E9%81%97%E5%A4%B1%E6%95%B0%E6%8D%AE"><span class="nav-text">处理遗失数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E6%88%90%E4%B8%8E%E5%8F%98%E6%8D%A2"><span class="nav-text">数据集成与变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BA%A6%E7%AE%80"><span class="nav-text">数据约简</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-text">离散化</span></a></li></ol>
 
     </div>
 </div>
